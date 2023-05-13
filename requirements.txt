@@ -19,7 +19,6 @@ decorator==4.4.2
 defusedxml==0.7.1
 dill==0.3.6
 distro==1.7.0
-distro-info===1.1build1
 docutils==0.18.1
 entrypoints==0.4
 fonttools==4.29.1
