@@ -96,10 +96,10 @@ pythran==0.10.0
 pytz==2022.1
 PyYAML==5.4.1
 pyzmq==22.3.0
-qiskit @ file:///mnt/c/Users/imybfu/Documents/Onedrive/code/download/qiskit-0.43.0.tar.gz
-qiskit-aer==0.12.0
-qiskit-ibmq-provider==0.20.2
-qiskit-terra==0.24.0
+# qiskit @ file:///mnt/c/Users/imybfu/Documents/Onedrive/code/download/qiskit-0.43.0.tar.gz
+# qiskit-aer==0.12.0
+# qiskit-ibmq-provider==0.20.2
+# qiskit-terra==0.24.0
 requests==2.25.1
 requests-ntlm==1.1.0
 roman==3.3
