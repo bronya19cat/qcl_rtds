@@ -3,7 +3,7 @@
    You can adapt this file completely to your liking, but it should at least
    contain the root `toctree` directive.
 
-Quantum Algorithms in Qiskit and Qpanda
+Quantum Algorithms in Qiskit
 =======================================
 
 .. toctree::
