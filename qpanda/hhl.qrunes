@@ -1,0 +1,63 @@
+@settings:
+    language = Python;
+    autoimport = True;
+    compile_only = False;
+
+@qcodes:
+circuit CRotate(vector<qubit> q) {
+    qubit controlVector[];
+    controlVector.append(q[1]);
+    controlVector.append(q[2]);
+    X(q[1]);
+    RY(q[0], Pi).control(controlVector);
+    X(q[1]);
+    X(q[2]);
+    RY(q[0], Pi/3).control(controlVector);
+    X(q[2]);
+    RY(q[0], 0.679673818908).control(controlVector);  //arcsin(1/3)
+}
+
+//Phase estimation algorithms
+circuit hhlPse(vector<qubit> q) {
+
+    H(q[1]);
+    H(q[2]);
+    RZ(q[2], 0.75*Pi);
+    CU(Pi, 1.5*Pi, -0.5*Pi, Pi/2, q[2], q[3]);
+    RZ(q[1], 1.5*Pi);
+    CU(Pi, 1.5*Pi, -Pi, Pi/2, q[1], q[3]);
+
+    CNOT(q[1], q[2]);
+    CNOT(q[2], q[1]);
+    CNOT(q[1], q[2]);
+
+    H(q[2]);
+    CU(-0.25*Pi, -0.5*Pi, 0, 0, q[2], q[1]);
+    H(q[1]);
+}
+
+hhl_no_measure(vector<qubit> qlist, vector<int> clist) {
+    //phase estimation
+    hhlPse(qlist);
+    //rotate
+    CRotate(qlist);
+}
+
+@script:
+if __name__ == '__main__':
+    machine = init_quantum_machine(QMachineType.CPU)
+
+    qubit_num = 4
+    cbit_num = 2
+    qv = machine.qAlloc_many(qubit_num)
+    cv = machine.cAlloc_many(cbit_num)
+    hhlprog = QProg()
+    hhlprog.insert(RY(qv[3], 3.14159265358979/2))   #change vecotr b in equation Ax=b
+    hhlprog.insert(hhl_no_measure(qv, cv))
+    directly_run(hhlprog)
+    pmeas_q = []
+    pmeas_q.append(qv[3])
+    res = PMeasure_no_index(pmeas_q)
+    print(res)
+
+    finalize()
