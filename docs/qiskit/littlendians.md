@@ -73,7 +73,7 @@ circuit.draw('mpl',scale=0.6)
 
 我们预计上述代码的结果应该是 $\ket{11}$，但结果出乎意料：
 
-![the result using a created cxgate](_static/test-cxgate.png "test-cxgate")
+![the result using a created cxgate](test-cxgate.png "test-cxgate")
 
 ---
 原因是在 qiskit 中，qubit 编码方式为 “Little endians”，叫做 “小端编码”，或者 “末端编码”。即，倒序排列 $\ket{q3q2q1q0}$。
