@@ -10,7 +10,7 @@ Quantum Algorithms & Chip
    :maxdepth: 2
    :caption: QISKIT
 
-   qiskit/littlendians
+   qiskit/01littlendians
 
 .. toctree::
    :maxdepth: 2
@@ -28,7 +28,7 @@ Quantum Algorithms & Chip
    chipdesign/10
    chipdesign/11
    chipdesign/12
-   chipdesign/0
+   chipdesign/00constant
 
 Indices and tables
 ==================

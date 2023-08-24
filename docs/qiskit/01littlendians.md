@@ -1,5 +1,5 @@
-# Little endians
-## CNOT门分解
+# 1. Little endians
+## 1.1 CNOT门分解
 
 CNOT 门的矩阵形式为：
 
@@ -52,7 +52,7 @@ $$
 以上是正常的公式计算的结果，然而在使用qiskit或者其他编程语言中，却遇到了不同的情况。
 
 
-## What happened in qiskit
+## 1.2 What happened in qiskit
 
 在 qiskit 中有 `UnitaryGate` 工具可以将矩阵转化为量子门，如：
 ```python
@@ -96,7 +96,7 @@ CNOT = \left[\begin{matrix}
 $$
 
 
-## 什么是Little endians
+## 1.3 什么是Little endians
 
 比如一个 16 进制的整数 "0x1234"，其二进制是 "0001 0010 0011 0100"，左边是高字节序，右边是低字节序。
 
