@@ -10,25 +10,25 @@ Quantum Algorithms & Chip
    :maxdepth: 2
    :caption: QISKIT
 
-   qiskit/01littlendians
+   docs/doc-qiskit/01littlendians.md
 
 .. toctree::
    :maxdepth: 2
    :caption: CHIP
 
-   chipdesign/1
-   chipdesign/2
-   chipdesign/3
-   chipdesign/4
-   chipdesign/5
-   chipdesign/6
-   chipdesign/7
-   chipdesign/8
-   chipdesign/9
-   chipdesign/10
-   chipdesign/11
-   chipdesign/12
-   chipdesign/00constant
+   docs/doc-chip/00.md
+   docs/doc-chip/01.md
+   docs/doc-chip/02.md
+   docs/doc-chip/03.md
+   docs/doc-chip/04.md
+   docs/doc-chip/05.md
+   docs/doc-chip/06.md
+   docs/doc-chip/07.md
+   docs/doc-chip/08.md
+   docs/doc-chip/09.md
+   docs/doc-chip/10.md
+   docs/doc-chip/11.md
+   docs/doc-chip/12.md
 
 Indices and tables
 ==================
