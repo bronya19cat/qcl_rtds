@@ -1,5 +1,6 @@
 # 在index的caption后中加入新的文件
 import os
+
 def add_filenames(directory, string_incoulded, target_position):
     all_file=target_position+"\n"
     for filename in os.listdir(directory):
@@ -16,7 +17,6 @@ def add_filenames(directory, string_incoulded, target_position):
 def delete_lines_with_string(file_path, string):
     with open(file_path, 'r') as file:
         lines = file.readlines()
-
     with open(file_path, 'w') as file:
         add_newline = False  # 标记是否需要添加空行
         for line in lines:
@@ -28,7 +28,6 @@ def delete_lines_with_string(file_path, string):
             elif add_newline:
                 file.write('\n')  # 在删除行后的位置添加空行
                 add_newline = False  # 重置标记
-
 
 
 # 指定目录路径
@@ -51,3 +50,19 @@ delete_lines_with_string('index.rst', 'qcl/')
 add_filenames(directory1, string_incoulded, target_position1)
 add_filenames(directory2, string_incoulded, target_position2)
 add_filenames(directory3, string_incoulded, target_position3)
+
+
+def add_empty_line_before_string(file_path, string):
+    with open(file_path, 'r') as file:
+        lines = file.readlines()
+
+    with open(file_path, 'w') as file:
+        found_string = False  # 标记是否找到指定字符串
+        for line in lines:
+            if string in line:
+                if not found_string:
+                    file.write('\n')  # 在找到的字符串前添加一个空行
+                found_string = True  # 找到指定字符串，标记为True
+            file.write(line)
+
+add_empty_line_before_string('index.rst', 'Quantum Computing Learning')
