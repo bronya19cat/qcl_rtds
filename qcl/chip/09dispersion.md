@@ -1,5 +1,4 @@
 # 9. 色散读取
-<font size=2>
 
 ![Alt text](image/dispersive-shift.jpg)
 
@@ -25,8 +24,6 @@
     \chi=g^2/\Delta(1+\Delta/(\omega_{21}-\omega_{10}))
     \tag{9.2}
     $$
-
-</font>
 
 ---
 e.g. 求色散位移

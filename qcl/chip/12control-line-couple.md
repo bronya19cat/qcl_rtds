@@ -1,7 +1,5 @@
 # 12. 控制线耦合强度
 
-<font size=2>
-
 ![Alt text](image/x-control.png)
 
 x-control 驱动强度为
@@ -16,7 +14,7 @@ $$
 Z_q=\frac{1}{\omega_qC_q}
 $$
 
-$C_q$ 的计算参考 [Sec.1](01.md) 中的单位长度电容 $(1.2)$ ，长度按 $4l_q$ 计算
+$C_q$ 的计算参考 [Sec.1](01impedance.md) 中的单位长度电容 $(1.2)$ ，长度按 $4l_q$ 计算
 
 $$
 C_q=4l_qC_0=8l_q\epsilon_0 (\epsilon^{sub}_r+1) \frac{K(k)}{K(\sqrt{1-k^2})}
@@ -25,7 +23,6 @@ $$
 利用上式以及非谐性 $\alpha=-E_C/\hbar=-e^2/(2C_q)/\hbar$ 可以计算出 bit 臂长
 
 ! 驱动强度一般 $g_d/2\pi>50MHz$ ，可以在 10ns 内完成单次激发。（*??? from wang th p40，未找到操作时间与 $g_d$ 的关系*）
-</font>
 
 ---
 e.g. 计算驱动强度

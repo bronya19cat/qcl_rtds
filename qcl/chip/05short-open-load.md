@@ -1,8 +1,8 @@
-# 5. 负载短路 λ/4 和开路 λ/2 传输线可等效为并联LCR谐振腔
+# 5. 负载短路和开路
 
-在 [Sec.4](04.md) 的输出结果中可以看到： short 和 open 阻抗曲线仅相差 $\lambda/4$ ， 且$\lambda(1/4+1/2k)$ 处的 short 和 $\lambda(1/2+1/2k)$ 处的 open 都具有并联 LCR 阻抗特性，接下来具体分析。
+负载短路 λ/4 和开路 λ/2 传输线可等效为并联LCR谐振腔
 
-<font size=2>
+在 [Sec.4](04total-reflection.md) 的输出结果中可以看到： short 和 open 阻抗曲线仅相差 $\lambda/4$ ， 且$\lambda(1/4+1/2k)$ 处的 short 和 $\lambda(1/2+1/2k)$ 处的 open 都具有并联 LCR 阻抗特性，接下来具体分析。
 
 串联型LCR阻抗：Z=R+iwL+1/iwC;
 
@@ -37,8 +37,6 @@
     $$
 
     等效并联LCR：$C=\pi/(2\omega_r Z_0), L=1/(\omega^2_rC)=2Z_0/\pi\omega_r$
-
-</font>
 
 ---
 e.g. 计算CPW长度（波长）

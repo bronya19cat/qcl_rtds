@@ -1,5 +1,4 @@
 # 1. 传输线的特征阻抗
-<font size=2>
 
 * 特征阻抗 $Z_0=\sqrt{L_0/C_0}$ ，单位长度的电感和电容分别为
 
@@ -35,8 +34,6 @@ e.g. 计算Z0
 bridge 的宽度 W=2um，CPW 的 w 为 5um，s 为10um，绝缘层的材质为高阻硅厚度为 250nm，衬底为蓝宝石。
 
 ![Alt text](image/table-z0.jpg)
-
-</font>
 
 ```py
 import scipy.special,numpy

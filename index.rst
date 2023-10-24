@@ -15,19 +15,19 @@ Quantum Computing Learning
    :maxdepth: 2
    :caption: CHIP
 
-   qcl/chip/00.md
-   qcl/chip/01.md
-   qcl/chip/02.md
-   qcl/chip/03.md
-   qcl/chip/04.md
-   qcl/chip/05.md
-   qcl/chip/06.md
-   qcl/chip/07.md
-   qcl/chip/08.md
-   qcl/chip/09.md
-   qcl/chip/10.md
-   qcl/chip/11.md
-   qcl/chip/12.md
+   qcl/chip/00constant.md
+   qcl/chip/01impedance.md
+   qcl/chip/02imp-transf.md
+   qcl/chip/03reflection-coeff-vswr.md
+   qcl/chip/04total-reflection.md
+   qcl/chip/05short-open-load.md
+   qcl/chip/06qf.md
+   qcl/chip/07purcell-effect.md
+   qcl/chip/08qubit-frequency.md
+   qcl/chip/09dispersion.md
+   qcl/chip/10qubit-couple-cavity.md
+   qcl/chip/11qubit-couple.md
+   qcl/chip/12control-line-couple.md
 
 .. toctree::
    :maxdepth: 2

@@ -1,7 +1,5 @@
 # 11. 比特间可调耦合
 
-<font size=2>
-
 ![Alt text](image/couple-tunable.jpg)
 
 耦合强度
@@ -21,4 +19,3 @@ $$
 g_{12}=\frac{\sqrt{\omega _1\omega _2}}{2}(\frac{C_{12}}{\sqrt{C_1C_2}}+\frac{C_{1c}C_{2c}}{\sqrt{C_1C_2}C_c^2})
 $$
 
-</font>

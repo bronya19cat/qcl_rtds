@@ -1,7 +1,5 @@
 # 8. 比特频率
 
-<font size=2>
-
 1. 对于 LC 谐振电路， $H=4E_Cn^2+\frac{1}{2}E_L\phi^2$ ，是 $\phi$ 的抛物线函数。
 
     ！ 注意，该式是算符形式。
@@ -23,8 +21,6 @@
     $I_CR_n=\pi\Delta(0)/2e$ ， $R_n$ 是结的常温电阻， $\Delta(0)$ 是绝对零度下结的超导材料能隙。
 
     比特频率 $\omega_q=(\sqrt{8E_jE_C}-E_C)/\hbar$ ，非谐性 $\alpha=\omega _{21}-\omega _{10}=-E_C$ 。
-
-</font>
 
 ---
 e.g. 求结的常温电阻

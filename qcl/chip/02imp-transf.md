@@ -1,7 +1,5 @@
 # 2. λ/4阻抗变换特性
 
-<font size=2>
-
 传输线方程由入射波+反射波两部分组成：
 
 $$
@@ -34,8 +32,6 @@ $$
 Z_{in}=Z_0\frac{Z_1+jZ_0\tan{\beta z}}{Z_0+jZ_1\tan{\beta z}}
 \tag{2.2}
 $$
-
-</font>
 
 可以看出，当 $z=k\frac{\pi}{\beta}=k\frac{\lambda}{2}, \quad \beta=2\pi/\lambda$ 时， $\beta z=k\pi \Rightarrow Z_{in}=Z_1$ 。该特性称作 $\lambda/2$ 阻抗重复性，下面画图展示。
 

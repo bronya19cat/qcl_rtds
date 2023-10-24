@@ -1,8 +1,6 @@
 # 3. 反射系数和驻波比
 
-<font size=2>
-
-由 [Sec.2](02.md) 传输方程 $(2.1)$ ，得出反射系数：
+由 [Sec.2](02imp-transf.md) 传输方程 $(2.1)$ ，得出反射系数：
 
 $$
 \Gamma_u(z)=\frac{u^-}{u^+}=\frac{A_2}{A_1}e^{-2j\gamma z}=\frac{Z_1-Z_0}{Z_1+Z_0}e^{-2j\gamma z}=-\Gamma_i(z)
@@ -22,4 +20,3 @@ $$
 \rho=\frac{1+|\Gamma|}{1-|\Gamma|}
 $$
 
-</font>
