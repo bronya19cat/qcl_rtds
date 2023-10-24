@@ -2,15 +2,13 @@
    sphinx-quickstart on Fri May  5 23:38:01 2023.
    You can adapt this file completely to your liking, but it should at least
    contain the root `toctree` directive.
-
 Quantum Computing Learning
 =======================================
-
 .. toctree::
    :maxdepth: 2
    :caption: QISKIT
 
-   qcl/algo/01littlendians.md
+   qcl/qiskit/01littlendians.md
 
 .. toctree::
    :maxdepth: 2
@@ -33,14 +31,13 @@ Quantum Computing Learning
 .. toctree::
    :maxdepth: 2
    :caption: MAC
-   
+
    qcl/mac/01Johnson-Nyquist.md
    qcl/mac/02effective-noise-temp.md
    qcl/mac/03heat-load.md
 
 Indices and tables
 ==================
-
 * :ref:`genindex`
 * :ref:`modindex`
 * :ref:`search`
