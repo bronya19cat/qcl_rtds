@@ -38,6 +38,13 @@ Quantum Computing Learning
    mac/02等效噪声温度.md
    mac/03线缆热负荷.md
 
+.. toctree::
+   :maxdepth: 2
+   :caption: QUBIT
+
+   qubit/01超导量子计算基础.md
+   qubit/02超导量子比特类型.md
+
 Indices and Tables
 ==================
 * :ref:`genindex`
