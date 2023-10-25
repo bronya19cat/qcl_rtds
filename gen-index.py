@@ -68,3 +68,22 @@ def add_empty_line_before_string(file_path, string):
             file.write(line)
 
 add_empty_line_before_string('index.rst', 'Quantum Computing Learning')
+
+
+def add_empty_line_after_string(file_path, string):
+    with open(file_path, 'r') as file:
+        lines = file.readlines()
+
+    with open(file_path, 'w') as file:
+        found_string = False  # 标记是否找到指定字符串
+        for line in lines:
+            file.write(line)
+            if string in line:
+                found_string = True  # 找到指定字符串，标记为True
+                file.write('\n')  # 在找到的字符串后添加一个空行
+
+    if not found_string:
+        print("未找到指定字符串。")
+
+add_empty_line_after_string('index.rst', '=======================================')
+
