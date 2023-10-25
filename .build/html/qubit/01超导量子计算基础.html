@@ -1,0 +1,132 @@
+
+<!DOCTYPE html>
+
+<html lang="zh_CN">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>&lt;no title&gt; &#8212; Quantum Computing Learning  文档</title>
+    <link rel="stylesheet" type="text/css" href="../_static/pygments.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/alabaster.css" />
+    <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
+    <script src="../_static/jquery.js"></script>
+    <script src="../_static/underscore.js"></script>
+    <script src="../_static/doctools.js"></script>
+    <script src="../_static/translations.js"></script>
+    <link rel="index" title="索引" href="../genindex.html" />
+    <link rel="search" title="搜索" href="../search.html" />
+   
+  <link rel="stylesheet" href="../_static/custom.css" type="text/css" />
+  
+  
+  <meta name="viewport" content="width=device-width, initial-scale=0.9, maximum-scale=0.9" />
+
+  </head><body>
+  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          
+
+          <div class="body" role="main">
+            
+  <p>超导量子计算的物理关键在于超导量子比特，它采取了具有宏观量子效应的器件，如超导谐振电路、约瑟夫森结等，这些器件主要是由超导材料（目前主流的超导材料为铝和铌，超导转变温度分别为 1.20 K 和 9.26 K）制备而成，其宏观量子效应的来源在于超导体中库珀对的集体行为，通过外加电磁场来控制、耦合、测量超导量子比特。超导量子比特也被称作“人造原子”，不同于以原子分子为基础的其他量子比特系统，其最大特点就是具备极高的可设计性，并且完全兼容现在的半导体工艺。</p>
+<p>超导量子计算的核心优势归纳为以下四点：</p>
+<ol class="arabic simple">
+<li><p>可设计性。超导量子比特系统可以设计不同类型的量子比特，如电荷量子比特、磁通量子比特和相位量子比特；而不同的参数，如量子比特的能量水平和耦合强度，也可以通过调整电容、电感和约瑟夫森能量来调整。</p></li>
+<li><p>可扩展性。超导量子比特的制备基于现有的半导体微加工工艺：利用先进的芯片制造技术，可以制备出高质量的器件，这对制造和可扩展性都有好处。</p></li>
+<li><p>易于耦合。超导量子比特系统的电路性质使得将多个量子比特耦合在一起相对容易：一般来说，可以通过电容或电感进行耦合。</p></li>
+<li><p>易于控制。超导量子比特的操作、测量与微波控制和操作性兼容。因此，商用微波设备和器材可以用于超导量子计算实验。</p></li>
+</ol>
+
+
+          </div>
+          
+        </div>
+      </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+        <div class="sphinxsidebarwrapper">
+<h1 class="logo"><a href="../index.html">Quantum Computing Learning</a></h1>
+
+
+
+
+
+
+
+
+<h3>导航</h3>
+<p class="caption" role="heading"><span class="caption-text">QISKIT</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../qiskit/02littlendians.html">1. Little endians</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">CHIP</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../chip/00constant.html">附件：常量</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../chip/01%E4%BC%A0%E8%BE%93%E7%BA%BF%E7%9A%84%E7%89%B9%E5%BE%81%E9%98%BB%E6%8A%97.html">1. 传输线的特征阻抗</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../chip/02%E9%98%BB%E6%8A%97%E5%8F%98%E6%8D%A2%E7%89%B9%E6%80%A7.html">2. λ/4阻抗变换特性</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../chip/03%E5%8F%8D%E5%B0%84%E7%B3%BB%E6%95%B0%E5%92%8C%E9%A9%BB%E6%B3%A2%E6%AF%94.html">3. 反射系数和驻波比</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../chip/04%E5%85%A8%E5%8F%8D%E5%B0%84%E9%98%BB%E6%8A%97%E5%8F%98%E6%8D%A2.html">4. 全反射阻抗变换</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../chip/05%E8%B4%9F%E8%BD%BD%E7%9F%AD%E8%B7%AF%E5%92%8C%E5%BC%80%E8%B7%AF.html">5. 负载短路和开路</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../chip/06%E5%93%81%E8%B4%A8%E5%9B%A0%E5%AD%90.html">6. 品质因子</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../chip/07purcell-effect.html">7. Purcell effect</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../chip/08%E6%AF%94%E7%89%B9%E9%A2%91%E7%8E%87.html">8. 比特频率</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../chip/09%E8%89%B2%E6%95%A3%E8%AF%BB%E5%8F%96.html">9. 色散读取</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../chip/10%E6%AF%94%E7%89%B9%E4%B8%8E%E8%85%94%E8%80%A6%E5%90%88.html">10. 比特与腔耦合</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../chip/11%E6%AF%94%E7%89%B9%E9%97%B4%E5%8F%AF%E8%B0%83%E8%80%A6%E5%90%88.html">11. 比特间可调耦合</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../chip/12%E6%8E%A7%E5%88%B6%E7%BA%BF%E8%80%A6%E5%90%88%E5%BC%BA%E5%BA%A6.html">12. 控制线耦合强度</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">MAC</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../mac/01%E7%94%B5%E5%8E%8B%E5%99%AA%E5%A3%B0%E8%B0%B1%E5%AF%86%E5%BA%A6.html">1. 电压噪声谱密度</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../mac/02%E7%AD%89%E6%95%88%E5%99%AA%E5%A3%B0%E6%B8%A9%E5%BA%A6.html">2. 等效噪声温度</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../mac/03%E7%BA%BF%E7%BC%86%E7%83%AD%E8%B4%9F%E8%8D%B7.html">3. 线缆热负荷</a></li>
+</ul>
+
+<div class="relations">
+<h3>Related Topics</h3>
+<ul>
+  <li><a href="../index.html">Documentation overview</a><ul>
+  </ul></li>
+</ul>
+</div>
+<div id="searchbox" style="display: none" role="search">
+  <h3 id="searchlabel">快速搜索</h3>
+    <div class="searchformwrapper">
+    <form class="search" action="../search.html" method="get">
+      <input type="text" name="q" aria-labelledby="searchlabel" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false"/>
+      <input type="submit" value="转向" />
+    </form>
+    </div>
+</div>
+<script>$('#searchbox').show(0);</script>
+
+
+
+
+
+
+
+
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="footer">
+      &copy;2023, imybfu@outlook.com.
+      
+      |
+      Powered by <a href="http://sphinx-doc.org/">Sphinx 4.4.0</a>
+      &amp; <a href="https://github.com/bitprophet/alabaster">Alabaster 0.7.12</a>
+      
+      |
+      <a href="../_sources/qubit/01超导量子计算基础.md.txt"
+          rel="nofollow">Page source</a>
+    </div>
+
+    
+
+    
+  </body>
+</html>

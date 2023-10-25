@@ -1,0 +1,177 @@
+
+<!DOCTYPE html>
+
+<html lang="zh_CN">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>8. 比特频率 &#8212; Quantum Computing Learning  文档</title>
+    <link rel="stylesheet" type="text/css" href="../_static/pygments.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/alabaster.css" />
+    <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
+    <script src="../_static/jquery.js"></script>
+    <script src="../_static/underscore.js"></script>
+    <script src="../_static/doctools.js"></script>
+    <script src="../_static/translations.js"></script>
+    <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
+    <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <link rel="index" title="索引" href="../genindex.html" />
+    <link rel="search" title="搜索" href="../search.html" />
+    <link rel="next" title="9. 色散读取" href="09%E8%89%B2%E6%95%A3%E8%AF%BB%E5%8F%96.html" />
+    <link rel="prev" title="7. Purcell effect" href="07purcell-effect.html" />
+   
+  <link rel="stylesheet" href="../_static/custom.css" type="text/css" />
+  
+  
+  <meta name="viewport" content="width=device-width, initial-scale=0.9, maximum-scale=0.9" />
+
+  </head><body>
+  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          
+
+          <div class="body" role="main">
+            
+  <div class="tex2jax_ignore mathjax_ignore section" id="id1">
+<h1>8. 比特频率<a class="headerlink" href="#id1" title="永久链接至标题">¶</a></h1>
+<ol class="arabic">
+<li><p>对于 LC 谐振电路， <span class="math notranslate nohighlight">\(H=4E_Cn^2+\frac{1}{2}E_L\phi^2\)</span> ，是 <span class="math notranslate nohighlight">\(\phi\)</span> 的抛物线函数。</p>
+<p>！ 注意，该式是算符形式。</p>
+<p>其中 <span class="math notranslate nohighlight">\(E_C=e^2/(2C)\)</span> 是将 Cooper 对中的每个电子加到 island 上的电荷能量， <span class="math notranslate nohighlight">\(n=Q/2e\)</span> 是 island 上附加的 Cooper 对数量。</p>
+<p>！ 注，在上述定义中前后的单电子 / Cooper 的不一致，是该项前系数 “4” 的成因。</p>
+<p><span class="math notranslate nohighlight">\(E_L=(\Phi _0/2\pi)^2/L\)</span> 是电感能量, <span class="math notranslate nohighlight">\(\Phi_0=h/(2e)\)</span> 是超导磁通量子， 磁通减少量 <span class="math notranslate nohighlight">\(\phi\equiv2\pi\Phi/\Phi _0\)</span> 是穿过电感的规范不变相 “gauge-invariant phase”</p>
+<p>谐振器频率 <span class="math notranslate nohighlight">\(\omega_r=\sqrt{8E_LE_C}/\hbar=1/\sqrt{LC}\)</span> ，能级分布 <span class="math notranslate nohighlight">\(E_{k+1}-E_k=\hbar\omega_r\)</span> 。</p>
+<p><img alt="Alt text" src="../_images/elc-eq.png" /></p>
+</li>
+<li><p>对于量子比特，替换电感能为约瑟夫森结 <span class="math notranslate nohighlight">\(E_j\)</span> 的能量， <span class="math notranslate nohighlight">\(H=4E_Cn^2+E_j\cos{\phi}\)</span> 。</p>
+<p><span class="math notranslate nohighlight">\(E_j=I_C\Phi _0/2\pi\)</span> ，表示单电子穿过结的隧穿能量。 <span class="math notranslate nohighlight">\(I_C\)</span> 是结的临界电流。</p>
+<p><span class="math notranslate nohighlight">\(I_CR_n=\pi\Delta(0)/2e\)</span> ， <span class="math notranslate nohighlight">\(R_n\)</span> 是结的常温电阻， <span class="math notranslate nohighlight">\(\Delta(0)\)</span> 是绝对零度下结的超导材料能隙。</p>
+<p>比特频率 <span class="math notranslate nohighlight">\(\omega_q=(\sqrt{8E_jE_C}-E_C)/\hbar\)</span> ，非谐性 <span class="math notranslate nohighlight">\(\alpha=\omega _{21}-\omega _{10}=-E_C\)</span> 。</p>
+</li>
+</ol>
+<hr class="docutils" />
+<p>e.g. 求结的常温电阻</p>
+<p>Al 的超导能隙为 180ueV ，取比特频率 5.3GHz ，非谐 -230MHz。</p>
+<div class="highlight-py notranslate"><div class="highlight"><pre><span></span><span class="c1"># 计算结的临界电流、常温电阻，以及比特电容</span>
+<span class="k">def</span> <span class="nf">fun_ic_rn_c</span><span class="p">(</span><span class="n">delt0</span><span class="p">,</span><span class="n">omeq0</span><span class="p">,</span><span class="n">alph0</span><span class="p">):</span>
+    <span class="n">delt</span><span class="o">=</span><span class="n">delt0</span><span class="o">*</span><span class="n">E</span><span class="o">*</span><span class="n">um</span> <span class="c1"># ueV</span>
+    <span class="n">omeq</span><span class="o">=</span><span class="n">omeq0</span><span class="o">*</span><span class="n">PI2</span><span class="o">*</span><span class="n">ghz</span>
+    <span class="n">alph</span><span class="o">=</span><span class="n">alph0</span><span class="o">*</span><span class="n">PI2</span><span class="o">*</span><span class="n">mhz</span>
+
+    <span class="n">ec</span><span class="o">=-</span><span class="n">alph</span><span class="o">*</span><span class="n">HBAR</span>
+    <span class="n">ej</span><span class="o">=</span><span class="p">(</span><span class="n">HBAR</span><span class="o">*</span><span class="n">omeq</span><span class="o">+</span><span class="n">ec</span><span class="p">)</span><span class="o">**</span><span class="mi">2</span><span class="o">/</span><span class="mi">8</span><span class="o">/</span><span class="n">ec</span>
+    <span class="n">phi0</span><span class="o">=</span><span class="n">H</span><span class="o">/</span><span class="p">(</span><span class="mi">2</span><span class="o">*</span><span class="n">E</span><span class="p">)</span>
+    <span class="n">ic</span><span class="o">=</span><span class="n">PI2</span><span class="o">*</span><span class="n">ej</span><span class="o">/</span><span class="n">phi0</span>
+    <span class="n">rn</span><span class="o">=</span><span class="n">PI</span><span class="o">*</span><span class="n">delt</span><span class="o">/</span><span class="p">(</span><span class="mi">2</span><span class="o">*</span><span class="n">E</span><span class="p">)</span><span class="o">/</span><span class="n">ic</span>
+    <span class="n">c</span><span class="o">=</span><span class="n">E</span><span class="o">**</span><span class="mi">2</span><span class="o">/</span><span class="p">(</span><span class="mi">2</span><span class="o">*</span><span class="n">ec</span><span class="p">)</span>
+
+    <span class="n">rnc</span><span class="o">=</span><span class="p">[</span><span class="mi">0</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="mi">0</span><span class="p">]</span>
+    <span class="n">rnc</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">=</span><span class="n">ic</span><span class="o">/</span><span class="n">nm</span> <span class="c1"># nA</span>
+    <span class="n">rnc</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span><span class="o">=</span><span class="n">rn</span><span class="o">/</span><span class="n">km</span> <span class="c1"># kohm</span>
+    <span class="n">rnc</span><span class="p">[</span><span class="mi">2</span><span class="p">]</span><span class="o">=</span><span class="n">c</span><span class="o">/</span><span class="n">fm</span> <span class="c1"># fF</span>
+    <span class="k">return</span> <span class="n">rnc</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="n">fun_ic_rn_c</span><span class="p">(</span><span class="mi">180</span><span class="p">,</span><span class="mf">5.3</span><span class="p">,</span><span class="o">-</span><span class="mi">230</span><span class="p">))</span>
+
+</pre></div>
+</div>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="p">[</span><span class="mf">33.416602010491864</span><span class="p">,</span> <span class="mf">8.46116366751796</span><span class="p">,</span> <span class="mf">83.98971434530236</span><span class="p">]</span>
+</pre></div>
+</div>
+</div>
+
+
+          </div>
+          
+        </div>
+      </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+        <div class="sphinxsidebarwrapper">
+<h1 class="logo"><a href="../index.html">Quantum Computing Learning</a></h1>
+
+
+
+
+
+
+
+
+<h3>导航</h3>
+<p class="caption" role="heading"><span class="caption-text">QISKIT</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../qiskit/02littlendians.html">1. Little endians</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">CHIP</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="00constant.html">附件：常量</a></li>
+<li class="toctree-l1"><a class="reference internal" href="01%E4%BC%A0%E8%BE%93%E7%BA%BF%E7%9A%84%E7%89%B9%E5%BE%81%E9%98%BB%E6%8A%97.html">1. 传输线的特征阻抗</a></li>
+<li class="toctree-l1"><a class="reference internal" href="02%E9%98%BB%E6%8A%97%E5%8F%98%E6%8D%A2%E7%89%B9%E6%80%A7.html">2. λ/4阻抗变换特性</a></li>
+<li class="toctree-l1"><a class="reference internal" href="03%E5%8F%8D%E5%B0%84%E7%B3%BB%E6%95%B0%E5%92%8C%E9%A9%BB%E6%B3%A2%E6%AF%94.html">3. 反射系数和驻波比</a></li>
+<li class="toctree-l1"><a class="reference internal" href="04%E5%85%A8%E5%8F%8D%E5%B0%84%E9%98%BB%E6%8A%97%E5%8F%98%E6%8D%A2.html">4. 全反射阻抗变换</a></li>
+<li class="toctree-l1"><a class="reference internal" href="05%E8%B4%9F%E8%BD%BD%E7%9F%AD%E8%B7%AF%E5%92%8C%E5%BC%80%E8%B7%AF.html">5. 负载短路和开路</a></li>
+<li class="toctree-l1"><a class="reference internal" href="06%E5%93%81%E8%B4%A8%E5%9B%A0%E5%AD%90.html">6. 品质因子</a></li>
+<li class="toctree-l1"><a class="reference internal" href="07purcell-effect.html">7. Purcell effect</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">8. 比特频率</a></li>
+<li class="toctree-l1"><a class="reference internal" href="09%E8%89%B2%E6%95%A3%E8%AF%BB%E5%8F%96.html">9. 色散读取</a></li>
+<li class="toctree-l1"><a class="reference internal" href="10%E6%AF%94%E7%89%B9%E4%B8%8E%E8%85%94%E8%80%A6%E5%90%88.html">10. 比特与腔耦合</a></li>
+<li class="toctree-l1"><a class="reference internal" href="11%E6%AF%94%E7%89%B9%E9%97%B4%E5%8F%AF%E8%B0%83%E8%80%A6%E5%90%88.html">11. 比特间可调耦合</a></li>
+<li class="toctree-l1"><a class="reference internal" href="12%E6%8E%A7%E5%88%B6%E7%BA%BF%E8%80%A6%E5%90%88%E5%BC%BA%E5%BA%A6.html">12. 控制线耦合强度</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">MAC</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../mac/01%E7%94%B5%E5%8E%8B%E5%99%AA%E5%A3%B0%E8%B0%B1%E5%AF%86%E5%BA%A6.html">1. 电压噪声谱密度</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../mac/02%E7%AD%89%E6%95%88%E5%99%AA%E5%A3%B0%E6%B8%A9%E5%BA%A6.html">2. 等效噪声温度</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../mac/03%E7%BA%BF%E7%BC%86%E7%83%AD%E8%B4%9F%E8%8D%B7.html">3. 线缆热负荷</a></li>
+</ul>
+
+<div class="relations">
+<h3>Related Topics</h3>
+<ul>
+  <li><a href="../index.html">Documentation overview</a><ul>
+      <li>Previous: <a href="07purcell-effect.html" title="上一章">7. Purcell effect</a></li>
+      <li>Next: <a href="09%E8%89%B2%E6%95%A3%E8%AF%BB%E5%8F%96.html" title="下一章">9. 色散读取</a></li>
+  </ul></li>
+</ul>
+</div>
+<div id="searchbox" style="display: none" role="search">
+  <h3 id="searchlabel">快速搜索</h3>
+    <div class="searchformwrapper">
+    <form class="search" action="../search.html" method="get">
+      <input type="text" name="q" aria-labelledby="searchlabel" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false"/>
+      <input type="submit" value="转向" />
+    </form>
+    </div>
+</div>
+<script>$('#searchbox').show(0);</script>
+
+
+
+
+
+
+
+
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="footer">
+      &copy;2023, imybfu@outlook.com.
+      
+      |
+      Powered by <a href="http://sphinx-doc.org/">Sphinx 4.4.0</a>
+      &amp; <a href="https://github.com/bitprophet/alabaster">Alabaster 0.7.12</a>
+      
+      |
+      <a href="../_sources/chip/08比特频率.md.txt"
+          rel="nofollow">Page source</a>
+    </div>
+
+    
+
+    
+  </body>
+</html>
