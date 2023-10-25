@@ -10,7 +10,7 @@ Quantum Computing Learning
    :caption: QISKIT
 
    qiskit/01qiskit.md
-   qiskit/02littlendians.md
+   qiskit/02little-endians.md
 
 .. toctree::
    :maxdepth: 2
