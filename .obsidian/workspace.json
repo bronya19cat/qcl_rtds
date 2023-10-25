@@ -1,0 +1,205 @@
+{
+  "main": {
+    "id": "5419b4fdca03d4d6",
+    "type": "split",
+    "children": [
+      {
+        "id": "633c5bfdecd8596e",
+        "type": "tabs",
+        "children": [
+          {
+            "id": "015916430094d734",
+            "type": "leaf",
+            "state": {
+              "type": "graph",
+              "state": {}
+            }
+          },
+          {
+            "id": "7c6dfe36f244c7ab",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "qubit/01超导量子计算基础.md",
+                "mode": "source",
+                "source": false
+              }
+            }
+          },
+          {
+            "id": "17dbf5316d788944",
+            "type": "leaf",
+            "state": {
+              "type": "graph",
+              "state": {}
+            }
+          }
+        ],
+        "currentTab": 2
+      }
+    ],
+    "direction": "vertical"
+  },
+  "left": {
+    "id": "b7634bf764973b2a",
+    "type": "split",
+    "children": [
+      {
+        "id": "f1e54e9fc010cbc9",
+        "type": "tabs",
+        "children": [
+          {
+            "id": "37efe8e31cf53fe2",
+            "type": "leaf",
+            "state": {
+              "type": "file-explorer",
+              "state": {
+                "sortOrder": "alphabetical"
+              }
+            }
+          },
+          {
+            "id": "aad9bcdc37367da6",
+            "type": "leaf",
+            "state": {
+              "type": "search",
+              "state": {
+                "query": "",
+                "matchingCase": false,
+                "explainSearch": false,
+                "collapseAll": false,
+                "extraContext": false,
+                "sortOrder": "alphabetical"
+              }
+            }
+          },
+          {
+            "id": "a8b41caf65e7a1aa",
+            "type": "leaf",
+            "state": {
+              "type": "bookmarks",
+              "state": {}
+            }
+          }
+        ]
+      }
+    ],
+    "direction": "horizontal",
+    "width": 300
+  },
+  "right": {
+    "id": "4ffbf5f2a4fe8db5",
+    "type": "split",
+    "children": [
+      {
+        "id": "c7c035803bf616d6",
+        "type": "tabs",
+        "children": [
+          {
+            "id": "7a739c5180271945",
+            "type": "leaf",
+            "state": {
+              "type": "backlink",
+              "state": {
+                "collapseAll": false,
+                "extraContext": false,
+                "sortOrder": "alphabetical",
+                "showSearch": false,
+                "searchQuery": "",
+                "backlinkCollapsed": false,
+                "unlinkedCollapsed": true
+              }
+            }
+          },
+          {
+            "id": "aa07b7f876921aac",
+            "type": "leaf",
+            "state": {
+              "type": "outgoing-link",
+              "state": {
+                "linksCollapsed": false,
+                "unlinkedCollapsed": true
+              }
+            }
+          },
+          {
+            "id": "6f618228fb5ccd50",
+            "type": "leaf",
+            "state": {
+              "type": "tag",
+              "state": {
+                "sortOrder": "frequency",
+                "useHierarchy": true
+              }
+            }
+          },
+          {
+            "id": "9d7d4067eef0c456",
+            "type": "leaf",
+            "state": {
+              "type": "outline",
+              "state": {}
+            }
+          }
+        ]
+      }
+    ],
+    "direction": "horizontal",
+    "width": 300,
+    "collapsed": true
+  },
+  "left-ribbon": {
+    "hiddenItems": {
+      "switcher:打开快速切换": false,
+      "graph:查看关系图谱": false,
+      "canvas:新建白板": false,
+      "daily-notes:打开/创建今天的日记": false,
+      "templates:插入模板": false,
+      "command-palette:打开命令面板": false
+    }
+  },
+  "active": "17dbf5316d788944",
+  "lastOpenFiles": [
+    "qiskit/01qiskit.md",
+    "qiskit/02littlendians.md",
+    "qubit/02超导量子比特类型.md",
+    "qubit/01超导量子计算基础.md",
+    "chip/02阻抗变换特性.md",
+    "mac/02等效噪声温度.md",
+    "mac/03线缆热负荷.md",
+    "mac/01电压噪声谱密度.md",
+    "chip/12控制线耦合强度.md",
+    "chip/11比特间可调耦合.md",
+    "chip/10比特与腔耦合.md",
+    "chip/09色散读取.md",
+    "chip/08比特频率.md",
+    "chip/07purcell-effect.md",
+    "chip/06品质因子.md",
+    "chip/05负载短路和开路.md",
+    "chip/04全反射阻抗变换.md",
+    "chip/03反射系数和驻波比.md",
+    "chip/01传输线的特征阻抗.md",
+    "chip/00constant.md",
+    "qubit",
+    "algo/01littlendians.md",
+    "algo/image/test-cxgate.png",
+    "algo/image",
+    "chip/image/table-z0.jpg",
+    "chip/image/x-control.png",
+    "chip/image/lcr-series.jpg",
+    "chip/image/lcr-parallel.jpg",
+    "chip/image/elc-eq.png",
+    "chip/image/dispersive-shift.jpg",
+    "chip/image/dispersive-region.png",
+    "chip/image/couple-tunable.jpg",
+    "chip/image/cpw.png",
+    "chip/image",
+    "01Johnson-Nyquist.md",
+    "algo",
+    "chip",
+    "02effective-noise-temp.md",
+    "03heat-load.md",
+    "mac"
+  ]
+}

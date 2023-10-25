@@ -1,0 +1,145 @@
+
+<!DOCTYPE html>
+
+<html lang="zh_CN">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+
+    <title>11. 比特间可调耦合 &#8212; quantum computing learning  文档</title>
+    <link rel="stylesheet" type="text/css" href="../_static/pygments.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/alabaster.css" />
+    <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
+    <script src="../_static/jquery.js"></script>
+    <script src="../_static/underscore.js"></script>
+    <script src="../_static/doctools.js"></script>
+    <script src="../_static/translations.js"></script>
+    <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
+    <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <link rel="index" title="索引" href="../genindex.html" />
+    <link rel="search" title="搜索" href="../search.html" />
+    <link rel="next" title="12. 控制线耦合强度" href="12.html" />
+    <link rel="prev" title="10. 比特与读取腔耦合" href="10.html" />
+   
+  <link rel="stylesheet" href="../_static/custom.css" type="text/css" />
+  
+  
+  <meta name="viewport" content="width=device-width, initial-scale=0.9, maximum-scale=0.9" />
+
+  </head><body>
+  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          
+
+          <div class="body" role="main">
+            
+  <section class="tex2jax_ignore mathjax_ignore" id="id1">
+<h1>11. 比特间可调耦合<a class="headerlink" href="#id1" title="永久链接至标题">¶</a></h1>
+<font size=2>
+<p><img alt="Alt text" src="../_images/couple-tunable.jpg" /></p>
+<p>耦合强度</p>
+<div class="math notranslate nohighlight">
+\[
+g\approx \frac{g_{1c}g_{2c}}{2}(\frac{1}{\Delta _{1c}}+\frac{1}{\Delta _{2c}}-\frac{1}{\Sigma _{1c}}-\frac{1}{\Sigma _{2c}})+g_{12}
+\tag{11.1}
+\]</div>
+<p>其中 <span class="math notranslate nohighlight">\(\Delta _{ic}=\omega_i-\omega_c, \quad \Sigma _{ic}=\omega_i+\omega_c\)</span> ， <span class="math notranslate nohighlight">\(g_{ic}\)</span> 的计算方式如式 <span class="math notranslate nohighlight">\((10.1)\)</span> 一致</p>
+<div class="math notranslate nohighlight">
+\[
+g_{ic}\approx C_{ic}\frac{\sqrt{\omega_i\omega_c}}{2\sqrt{(C_i+C_{ic})(C_c+C_{ic})}}
+\]</div>
+<div class="math notranslate nohighlight">
+\[
+g_{12}=\frac{\sqrt{\omega _1\omega _2}}{2}(\frac{C_{12}}{\sqrt{C_1C_2}}+\frac{C_{1c}C_{2c}}{\sqrt{C_1C_2}C_c^2})
+\]</div>
+</font></section>
+
+
+          </div>
+          
+        </div>
+      </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+        <div class="sphinxsidebarwrapper">
+<h1 class="logo"><a href="../index.html">quantum computing learning</a></h1>
+
+
+
+
+
+
+
+
+<h3>导航</h3>
+<p class="caption" role="heading"><span class="caption-text">QISKIT</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../doc-qiskit/01littlendians.html">1. Little endians</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">CHIP</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="00.html">附件：设置常量</a></li>
+<li class="toctree-l1"><a class="reference internal" href="01.html">1. 传输线的特征阻抗</a></li>
+<li class="toctree-l1"><a class="reference internal" href="02.html">2. λ/4阻抗变换特性</a></li>
+<li class="toctree-l1"><a class="reference internal" href="03.html">3. 反射系数和驻波比</a></li>
+<li class="toctree-l1"><a class="reference internal" href="04.html">4. 全反射情况（开路、短路、纯电抗）阻抗变换</a></li>
+<li class="toctree-l1"><a class="reference internal" href="05.html">5. 负载短路 λ/4 和开路 λ/2 传输线可等效为并联LCR谐振腔</a></li>
+<li class="toctree-l1"><a class="reference internal" href="06.html">6. 谐振腔的品质因子</a></li>
+<li class="toctree-l1"><a class="reference internal" href="07.html">7. Purcell effect</a></li>
+<li class="toctree-l1"><a class="reference internal" href="08.html">8. 比特频率</a></li>
+<li class="toctree-l1"><a class="reference internal" href="09.html">9. 色散读取</a></li>
+<li class="toctree-l1"><a class="reference internal" href="10.html">10. 比特与读取腔耦合</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">11. 比特间可调耦合</a></li>
+<li class="toctree-l1"><a class="reference internal" href="12.html">12. 控制线耦合强度</a></li>
+</ul>
+
+<div class="relations">
+<h3>Related Topics</h3>
+<ul>
+  <li><a href="../index.html">Documentation overview</a><ul>
+      <li>Previous: <a href="10.html" title="上一章">10. 比特与读取腔耦合</a></li>
+      <li>Next: <a href="12.html" title="下一章">12. 控制线耦合强度</a></li>
+  </ul></li>
+</ul>
+</div>
+<div id="searchbox" style="display: none" role="search">
+  <h3 id="searchlabel">快速搜索</h3>
+    <div class="searchformwrapper">
+    <form class="search" action="../search.html" method="get">
+      <input type="text" name="q" aria-labelledby="searchlabel" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false"/>
+      <input type="submit" value="转向" />
+    </form>
+    </div>
+</div>
+<script>$('#searchbox').show(0);</script>
+
+
+
+
+
+
+
+
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="footer">
+      &copy;2023, imybfu.
+      
+      |
+      Powered by <a href="http://sphinx-doc.org/">Sphinx 4.5.0</a>
+      &amp; <a href="https://github.com/bitprophet/alabaster">Alabaster 0.7.13</a>
+      
+      |
+      <a href="../_sources/doc-chip-design/11.md.txt"
+          rel="nofollow">Page source</a>
+    </div>
+
+    
+
+    
+  </body>
+</html>

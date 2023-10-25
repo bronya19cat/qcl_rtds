@@ -31,9 +31,9 @@ def delete_lines_with_string(file_path, string):
 
 
 # 指定目录路径
-directory1 = 'qcl/qiskit'
-directory2 = 'qcl/chip'
-directory3 = 'qcl/mac'
+directory1 = 'qiskit'
+directory2 = 'chip'
+directory3 = 'mac'
 
 # 文件名字包含的字符
 string_incoulded = ".md"
@@ -43,8 +43,8 @@ target_position1 = '   :caption: QISKIT'
 target_position2 = '   :caption: CHIP'
 target_position3 = '   :caption: MAC'
 
-# 删除包含'qcl/'的行
-delete_lines_with_string('index.rst', 'qcl/')
+# 删除包含'md'的行
+delete_lines_with_string('index.rst', 'md')
 
 # 调用函数进行替换
 add_filenames(directory1, string_incoulded, target_position1)

@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="zh-CN" >
+<head>
+  <meta charset="utf-8" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>9、色散读取 &mdash; quantum computing learning  文档</title>
+      <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+      <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
+  <!--[if lt IE 9]>
+    <script src="../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+        <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
+        <script src="../_static/jquery.js"></script>
+        <script src="../_static/underscore.js"></script>
+        <script src="../_static/doctools.js"></script>
+        <script src="../_static/translations.js"></script>
+        <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
+        <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <script src="../_static/js/theme.js"></script>
+    <link rel="index" title="索引" href="../genindex.html" />
+    <link rel="search" title="搜索" href="../search.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+
+          
+          
+          <a href="../index.html" class="icon icon-home">
+            quantum computing learning
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <!-- Local TOC -->
+              <div class="local-toc"><ul>
+<li><a class="reference internal" href="#">9、色散读取</a></li>
+</ul>
+</div>
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../index.html">quantum computing learning</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="../index.html" class="icon icon-home" aria-label="Home"></a></li>
+      <li class="breadcrumb-item active">9、色散读取</li>
+      <li class="wy-breadcrumbs-aside">
+            <a href="../_sources/chip-design/9.md.txt" rel="nofollow"> View page source</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section id="id1">
+<h1>9、色散读取<a class="headerlink" href="#id1" title="永久链接至标题">¶</a></h1>
+<font size=2>
+<img src="image/dispersive-shift.jpg" width="360px">
+<p>（两能级、三能级、六能级模型下，谐振腔频率/腔内光子数随测量强度的变化，红线对应的是比特处于 |0⟩，蓝色虚线对应 |1⟩，灰色虚线对应 |2⟩。）</p>
+<p>由于比特与读取腔耦合后，读取腔本身的频率发生变化，理论上很难测量到腔的本征频率。但是当读取腔内的光子数较多时，腔的频率逐渐接近本征频率。因此 <span class="math notranslate nohighlight">\(\omega_r\)</span> 可以采用高功率进行快速标定。</p>
+<p>在 <span class="math notranslate nohighlight">\(g/\Delta &lt;&lt; 1\)</span> 的色散区域（dispersive regime），谐振子的共振频率 <span class="math notranslate nohighlight">\(\omega_r\)</span> 受量子比特影响产生位移（shift） <span class="math notranslate nohighlight">\(\chi\)</span> ，其中 <span class="math notranslate nohighlight">\(\Delta=\omega_q-\omega_r\)</span> 是量子比特和谐振子的频率差。</p>
+<ol class="arabic simple">
+<li><p>对于两能级系统，低功率下的读取腔的频率在比特不同态下有区分，而光子数几乎没有区别。
+$<span class="math notranslate nohighlight">\(
+ \chi=g^2/\Delta
+ \tag{9.1}
+ \)</span>$</p>
+<ul class="simple">
+<li><p>当 <span class="math notranslate nohighlight">\(q\rightarrow\ket{1}\)</span> , 谐振腔的共振频率发生偏移 <span class="math notranslate nohighlight">\(\omega_r+\chi\)</span></p></li>
+<li><p>当 <span class="math notranslate nohighlight">\(q\rightarrow\ket{0}\)</span> , 谐振腔的共振频率发生偏移 <span class="math notranslate nohighlight">\(\omega_r-\chi\)</span></p></li>
+</ul>
+</li>
+<li><p>考虑到量子比特存在更高能级，在三能级模型中，不仅低功率下频率有区别，高功率下的光子数也有区别。
+$<span class="math notranslate nohighlight">\(
+ \chi=g^2/\Delta(1+\Delta/(\omega_{21}-\omega_{10}))
+ \tag{9.2}
+ \)</span>$</p></li>
+</ol>
+</font>
+<hr class="docutils" />
+<p>e.g. 求色散位移</p>
+<p>qubit 和 res 频率差 1GHz，耦合强度为 50MHz，非谐性 -230MHz。色散位移为 -0.467Mhz。</p>
+<div class="highlight-py notranslate"><div class="highlight"><pre><span></span><span class="c1"># 计算色散位移量</span>
+<span class="k">def</span> <span class="nf">fun_shift2</span><span class="p">(</span><span class="n">delt0</span><span class="p">,</span><span class="n">g0</span><span class="p">):</span>
+    <span class="n">delt</span><span class="o">=</span><span class="n">delt0</span><span class="o">*</span><span class="n">PI2</span><span class="o">*</span><span class="n">ghz</span> <span class="c1"># GHz</span>
+    <span class="n">g</span><span class="o">=</span><span class="n">g0</span><span class="o">*</span><span class="n">PI2</span><span class="o">*</span><span class="n">mhz</span> <span class="c1"># MHz</span>
+    <span class="n">chi</span><span class="o">=</span><span class="n">g</span><span class="o">**</span><span class="mi">2</span><span class="o">/</span><span class="n">delt</span>
+    <span class="k">return</span> <span class="n">chi</span><span class="o">/</span><span class="n">PI2</span><span class="o">/</span><span class="n">mhz</span> <span class="c1"># MHz</span>
+
+<span class="c1"># 高阶修正</span>
+<span class="k">def</span> <span class="nf">fun_shift3</span><span class="p">(</span><span class="n">delt0</span><span class="p">,</span><span class="n">g0</span><span class="p">,</span><span class="n">alph0</span><span class="p">):</span>
+    <span class="n">delt</span><span class="o">=</span><span class="n">delt0</span><span class="o">*</span><span class="n">PI2</span><span class="o">*</span><span class="n">ghz</span> <span class="c1"># GHz</span>
+    <span class="n">g</span><span class="o">=</span><span class="n">g0</span><span class="o">*</span><span class="n">PI2</span><span class="o">*</span><span class="n">mhz</span> <span class="c1"># MHz</span>
+    <span class="n">alph</span><span class="o">=</span><span class="n">alph0</span><span class="o">*</span><span class="n">PI2</span><span class="o">*</span><span class="n">mhz</span> <span class="c1"># MHz</span>
+    <span class="n">chi</span><span class="o">=</span><span class="n">g</span><span class="o">**</span><span class="mi">2</span><span class="o">/</span><span class="n">delt</span><span class="o">/</span><span class="p">(</span><span class="mi">1</span><span class="o">+</span><span class="n">delt</span><span class="o">/</span><span class="n">alph</span><span class="p">)</span>
+    <span class="k">return</span> <span class="n">chi</span><span class="o">/</span><span class="n">PI2</span><span class="o">/</span><span class="n">mhz</span> <span class="c1"># MHz</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="n">fun_shift2</span><span class="p">(</span><span class="o">-</span><span class="mi">1</span><span class="p">,</span><span class="mi">50</span><span class="p">),</span> <span class="s2">&quot;MHz&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">fun_shift3</span><span class="p">(</span><span class="o">-</span><span class="mi">1</span><span class="p">,</span><span class="mi">50</span><span class="p">,</span><span class="o">-</span><span class="mi">230</span><span class="p">),</span> <span class="s2">&quot;MHz&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="o">-</span><span class="mf">2.5000000000000004</span> <span class="n">MHz</span>
+<span class="o">-</span><span class="mf">0.467479674796748</span> <span class="n">MHz</span>
+</pre></div>
+</div>
+<div class="highlight-py notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
+<span class="n">fig</span><span class="o">=</span><span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">(</span><span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">10</span><span class="p">,</span><span class="mi">5</span><span class="p">))</span>
+<span class="n">x1</span><span class="o">=</span><span class="n">numpy</span><span class="o">.</span><span class="n">linspace</span><span class="p">(</span><span class="o">-</span><span class="mf">0.8</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="mi">1000</span><span class="p">)</span>
+<span class="n">x2</span><span class="o">=</span><span class="n">numpy</span><span class="o">.</span><span class="n">linspace</span><span class="p">(</span><span class="o">-</span><span class="mf">0.01</span><span class="p">,</span><span class="mi">1</span><span class="p">,</span><span class="mi">1000</span><span class="p">)</span>
+<span class="n">ax</span><span class="o">=</span><span class="n">fig</span><span class="o">.</span><span class="n">add_subplot</span><span class="p">()</span>
+<span class="c1"># 红色部分一般的色散区域，失谐量&lt;0，色散位移&lt;0</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">x1</span><span class="p">,</span><span class="n">fun_shift3</span><span class="p">(</span><span class="n">x1</span><span class="p">,</span><span class="mi">50</span><span class="p">,</span><span class="o">-</span><span class="mi">300</span><span class="p">),</span><span class="s1">&#39;r&#39;</span><span class="p">)</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">x2</span><span class="p">,</span><span class="n">fun_shift3</span><span class="p">(</span><span class="n">x2</span><span class="p">,</span><span class="mi">50</span><span class="p">,</span><span class="o">-</span><span class="mi">300</span><span class="p">),</span><span class="s1">&#39;b&#39;</span><span class="p">)</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">set_ylim</span><span class="p">([</span><span class="o">-</span><span class="mi">100</span><span class="p">,</span><span class="mi">100</span><span class="p">])</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+</pre></div>
+</div>
+<p><img alt="Alt text" src="../_images/image-2.png" /></p>
+</section>
+
+
+           </div>
+          </div>
+          <footer>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; 版权所有 2023, imybfu.</p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

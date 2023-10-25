@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+
+<html lang="zh-CN">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
+
+    <title>1. 电压噪声谱密度 &#8212; quantum computing learning  文档</title>
+    <link rel="stylesheet" type="text/css" href="../../_static/pygments.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/alabaster.css" />
+    <script data-url_root="../../" id="documentation_options" src="../../_static/documentation_options.js"></script>
+    <script src="../../_static/doctools.js"></script>
+    <script src="../../_static/sphinx_highlight.js"></script>
+    <script src="../../_static/translations.js"></script>
+    <link rel="index" title="索引" href="../../genindex.html" />
+    <link rel="search" title="搜索" href="../../search.html" />
+   
+  <link rel="stylesheet" href="../../_static/custom.css" type="text/css" />
+  
+  
+  <meta name="viewport" content="width=device-width, initial-scale=0.9, maximum-scale=0.9" />
+
+  </head><body>
+  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          
+
+          <div class="body" role="main">
+            
+  <section id="id1">
+<h1>1. 电压噪声谱密度<a class="headerlink" href="#id1" title="此标题的永久链接">¶</a></h1>
+<p>温度会导致导体内部的自由电子不断进行热运动，对于阻值为 R 的电阻，Johnson-Nyquist 噪声的电压谱密度（等于功率谱密度 * R）为：
+$$
+S_{V2}(f,R,T) = 4k_BRT \frac{hf}{k_BT} \frac{1}{exp(hf/k_BT)-1}
+$$
+在 300K 常温下，RF 频段（GHz），$hf&lt;&lt;k_BT$ （比值约在万分之一）。计算得到 $hf\frac{1}{exp(hf/k_BT)-1}\approx k_BT$，也就是说 $S_{V2}\approx 4k_BRT$，这就是白噪声。</p>
+<p>并且，白噪声的频谱是均匀分布的，在所有频率上都有相同的能量密度。从量子的角度解释，温度引起了光子数涨落，进而和量子比特耦合，其密度为 $n(T,f)=\frac{1}{exp(hf/k_BT)-1} (unit: HZ^{-1} s^{-1})$ 。</p>
+<p>![[Pasted image 20231024195025.png]]</p>
+<p>从上图可以看到，频率越高，热激发产生的光子数密度越低，但是同时光子频率越高，单光子能量也高，因此最终的噪声密度 $S_{V2}\approx 4k_BRT$ 仍是一个与 f 无关的定值（在 300K 下）。</p>
+<p><mark>Q1：既然热噪声分布在全频段，并且其强度仅和温度有关，和输入信号无关。那么这里为何仅针对 f 频率的热光子？是否热噪声仅仅对相应频率的信号影响较大？</mark></p>
+<p>A1：在 REF.KONG.P57 找到了答案 “对于 qubit readout 线路来说，实际有影响的是频率𝑓𝑐附近的噪声成分”，这对于其他线路应该也是一样的。</p>
+<ul class="simple">
+<li><p>XY 通道信号频率在 4-6 GHz</p></li>
+<li><p>READOUT-IN 频率 6-8 GHz</p></li>
+</ul>
+<p>两个通道的光子数密度为：1249 和 892<br />
+频率范围内积分，总光子数分别是 2533 和 1797</p>
+<p>现在考虑降低光子数密度，各线缆通道需要多少衰减：</p>
+<ul class="simple">
+<li><p>XY 通道降低到 $10^{-2}$ 以下，需要 51dB</p></li>
+<li><p>READOUT-IN 降低到 $10^{-3}$ 以下，需要 60dB</p></li>
+</ul>
+<p><mark>Q2：这里计算得到READOUT-IN需要衰减为 60dB ，与预期的 70dB 有出入（线缆损耗约为10）。该问题暂存。</mark></p>
+<hr class="docutils" />
+<p>![[Pasted image 20231024195404.png]]</p>
+<p>实际上，每层的热源都会产生热噪声。接下来考虑按上图的设计，XY 通道上每一层产生的热噪声经过后级逐级衰减之后，到达 base (MC) 层时的噪声谱密度。</p>
+<p>不同线缆单位长度的插损可以从 REF.某计算环境支撑系统项目方案（ZB) -0908.docx 中获得：</p>
+<p>（1）高密度半刚线插损约为15.6dB/m</p>
+<ul class="simple">
+<li><p>RT-PT1：15.6 dB/m×0.18m＝2.808dB</p></li>
+<li><p>PT1-PT2：15.6 dB/m×0.286m＝4.4616dB</p></li>
+<li><p>PT2-Still：15.6 dB/m×0.248m＝3.8688dB</p></li>
+<li><p>Still-CP：15.6 dB/m×0.166m＝2.5896dB</p></li>
+</ul>
+<p>（2）普通密度半刚线插损约为15dB/m</p>
+<ul class="simple">
+<li><p>RT-PT1：15 dB/m×0.25m＝3.75dB</p></li>
+<li><p>PT1-PT2：15dB/m×0.265m＝3.975dB</p></li>
+<li><p>PT2-Still：15dB/m×0.22m＝3.3dB</p></li>
+<li><p>Still-CP：15 dB/m×0.07m＝1.05dB</p></li>
+</ul>
+<p>（3）CP-MC 使用的是 NbTi 线，极低温下基本没有损耗；300mm 半柔线插损为1.44dB，<br />
+（4）LPF 5850+插损为0.83dB；LPF 500+插损为0.94dB。</p>
+<p>![[Pasted image 20231024195448.png]]</p>
+<p>可以看出</p>
+<ul class="simple">
+<li><p>只有在 20 mK 层，噪声谱对频率敏感，这时热光子能量 $hf$ 接近热力学标度 $k_BT$；</p></li>
+<li><p>由于在 4-6 GHz 范围，20 mK 层与其他层存在数量级上的差异，求和后的谱密度曲线（black）仍以 ST-0.8K 层（green）为主。</p></li>
+</ul>
+</section>
+
+
+          </div>
+          
+        </div>
+      </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+        <div class="sphinxsidebarwrapper">
+<h1 class="logo"><a href="../../index.html">quantum computing learning</a></h1>
+
+
+
+
+
+
+
+
+<h3>导航</h3>
+<p class="caption" role="heading"><span class="caption-text">QISKIT</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../doc-qiskit/01littlendians.html">1. Little endians</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">CHIP</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../doc-chip/00.html">附件：设置常量</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../doc-chip/01.html">1. 传输线的特征阻抗</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../doc-chip/02.html">2. λ/4阻抗变换特性</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../doc-chip/03.html">3. 反射系数和驻波比</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../doc-chip/04.html">4. 全反射情况（开路、短路、纯电抗）阻抗变换</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../doc-chip/05.html">5. 负载短路 λ/4 和开路 λ/2 传输线可等效为并联LCR谐振腔</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../doc-chip/06.html">6. 谐振腔的品质因子</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../doc-chip/07.html">7. Purcell effect</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../doc-chip/08.html">8. 比特频率</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../doc-chip/09.html">9. 色散读取</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../doc-chip/10.html">10. 比特与读取腔耦合</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../doc-chip/11.html">11. 比特间可调耦合</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../doc-chip/12.html">12. 控制线耦合强度</a></li>
+</ul>
+
+<div class="relations">
+<h3>Related Topics</h3>
+<ul>
+  <li><a href="../../index.html">Documentation overview</a><ul>
+  </ul></li>
+</ul>
+</div>
+<div id="searchbox" style="display: none" role="search">
+  <h3 id="searchlabel">快速搜索</h3>
+    <div class="searchformwrapper">
+    <form class="search" action="../../search.html" method="get">
+      <input type="text" name="q" aria-labelledby="searchlabel" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false"/>
+      <input type="submit" value="提交" />
+    </form>
+    </div>
+</div>
+<script>document.getElementById('searchbox').style.display = "block"</script>
+
+
+
+
+
+
+
+
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="footer">
+      &copy;2023, imybfu.
+      
+      |
+      Powered by <a href="http://sphinx-doc.org/">Sphinx 7.0.0</a>
+      &amp; <a href="https://github.com/bitprophet/alabaster">Alabaster 0.7.12</a>
+      
+      |
+      <a href="../../_sources/docs/doc-mac/01Johnson-Nyquist.md.txt"
+          rel="nofollow">Page source</a>
+    </div>
+
+    
+
+    
+  </body>
+</html>

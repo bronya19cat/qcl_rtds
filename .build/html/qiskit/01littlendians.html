@@ -1,0 +1,237 @@
+
+<!DOCTYPE html>
+
+<html lang="zh_CN">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>1. Little endians &#8212; Quantum Computing Learning  文档</title>
+    <link rel="stylesheet" type="text/css" href="../_static/pygments.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/alabaster.css" />
+    <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
+    <script src="../_static/jquery.js"></script>
+    <script src="../_static/underscore.js"></script>
+    <script src="../_static/doctools.js"></script>
+    <script src="../_static/translations.js"></script>
+    <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
+    <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <link rel="index" title="索引" href="../genindex.html" />
+    <link rel="search" title="搜索" href="../search.html" />
+    <link rel="next" title="附件：常量" href="../chip/00constant.html" />
+    <link rel="prev" title="Quantum Computing Learning" href="../index.html" />
+   
+  <link rel="stylesheet" href="../_static/custom.css" type="text/css" />
+  
+  
+  <meta name="viewport" content="width=device-width, initial-scale=0.9, maximum-scale=0.9" />
+
+  </head><body>
+  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          
+
+          <div class="body" role="main">
+            
+  <div class="tex2jax_ignore mathjax_ignore section" id="little-endians">
+<h1>1. Little endians<a class="headerlink" href="#little-endians" title="永久链接至标题">¶</a></h1>
+<div class="section" id="cnot">
+<h2>1.1 CNOT门分解<a class="headerlink" href="#cnot" title="永久链接至标题">¶</a></h2>
+<p>CNOT 门的矩阵形式为：</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}
+CNOT = \left[\begin{matrix}
+1&amp;0&amp;0&amp;0\\
+0&amp;1&amp;0&amp;0\\
+0&amp;0&amp;0&amp;1\\
+0&amp;0&amp;1&amp;0\\
+\end{matrix}\right]
+\end{split}\]</div>
+<p>考虑将其分解成 2 维矩阵，来了解 CNOT 的作用方式，i.e.</p>
+<div class="math notranslate nohighlight">
+\[
+CNOT = P_0 \otimes I + P_1 \otimes X
+\]</div>
+<p>在这里，P 作用在前面的 qubit，I / X 作用在后面的 qubit。其中，</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}
+P_0 = \left[\begin{matrix}
+1&amp;0\\
+0&amp;0\\
+\end{matrix}\right],
+P_1 = \left[\begin{matrix}
+0&amp;0\\
+0&amp;1\\
+\end{matrix}\right]
+\end{split}\]</div>
+<p>注意 ！</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}
+P_0 \ket{0} = \ket{0}, P_0 \ket{1} = 0,\\
+P_1 \ket{0} = 0, P_1 \ket{1} = \ket{1}
+\end{split}\]</div>
+<p>其效果就是：当第一个 qubit 是 <span class="math notranslate nohighlight">\(\ket{0}\)</span> 时，I 矩阵不改变后面的 qubit；当第一个 qubit 是 <span class="math notranslate nohighlight">\(\ket{1}\)</span> 时，X 矩阵就会反转后面的 qubit。现在，将 CNOT 矩阵分别作用在 <span class="math notranslate nohighlight">\(\ket{01}\)</span> 态和 <span class="math notranslate nohighlight">\(\ket{10}\)</span> 态，</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}
+CNOT \ket{01} = 
+(P_0 \otimes I + P_1 \otimes X) \ket{01}\\
+= P_0 \ket{0} \otimes I \ket{1} + 0 = \ket{01},\\
+CNOT \ket{10} = 
+(P_0 \otimes I + P_1 \otimes X) \ket{10}\\
+= 0 + P_1 \ket{1} \otimes X \ket{0} = \ket{11}
+\end{split}\]</div>
+<p>以上是正常的公式计算的结果，然而在使用qiskit或者其他编程语言中，却遇到了不同的情况。</p>
+</div>
+<div class="section" id="what-happened-in-qiskit">
+<h2>1.2 What happened in qiskit<a class="headerlink" href="#what-happened-in-qiskit" title="永久链接至标题">¶</a></h2>
+<p>在 qiskit 中有 <code class="docutils literal notranslate"><span class="pre">UnitaryGate</span></code> 工具可以将矩阵转化为量子门，如：</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">qiskit</span> <span class="kn">import</span> <span class="n">QuantumCircuit</span>
+<span class="kn">from</span> <span class="nn">qiskit.extensions</span> <span class="kn">import</span> <span class="n">UnitaryGate</span>
+
+<span class="n">matrix1</span> <span class="o">=</span> <span class="p">[[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">],</span>
+          <span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">],</span>
+          <span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">],</span>
+          <span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">0</span><span class="p">]]</span>
+<span class="n">gatecx</span> <span class="o">=</span> <span class="n">UnitaryGate</span><span class="p">(</span><span class="n">matrix1</span><span class="p">)</span>
+
+<span class="n">circuit</span> <span class="o">=</span> <span class="n">QuantumCircuit</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span><span class="mi">2</span><span class="p">)</span>
+<span class="n">circuit</span><span class="o">.</span><span class="n">x</span><span class="p">(</span><span class="mi">0</span><span class="p">)</span>
+<span class="n">circuit</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">gatecx</span><span class="p">,[</span><span class="mi">0</span><span class="p">,</span><span class="mi">1</span><span class="p">])</span>
+<span class="n">circuit</span><span class="o">.</span><span class="n">draw</span><span class="p">(</span><span class="s1">&#39;mpl&#39;</span><span class="p">,</span><span class="n">scale</span><span class="o">=</span><span class="mf">0.6</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>我们预计上述代码的结果应该是 <span class="math notranslate nohighlight">\(\ket{11}\)</span>，但结果出乎意料：</p>
+<p><img alt="the result using a created cxgate" src="../_images/test-cxgate.png" /></p>
+<hr class="docutils" />
+<p>原因是在 qiskit 中，qubit 编码方式为 “Little endians”，叫做 “小端编码”，或者 “末端编码”。即，倒序排列 <span class="math notranslate nohighlight">\(\ket{q3q2q1q0}\)</span>。</p>
+<p>因此，在做计算时矩阵也是倒序作用 <span class="math notranslate nohighlight">\(B \otimes A\)</span>，表示 A 和 B 分别作用在 <span class="math notranslate nohighlight">\(q0\)</span> 和 <span class="math notranslate nohighlight">\(q1\)</span> 上。据此分析，构造 CNOT 的思路应该是：</p>
+<div class="math notranslate nohighlight">
+\[
+CNOT = I \otimes P_0 + X \otimes P_1
+\]</div>
+<p>所以在qiskit中，构造CNOT门应该使用的矩阵是：</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}
+CNOT = \left[\begin{matrix}
+1&amp;0&amp;0&amp;0\\
+0&amp;0&amp;0&amp;1\\
+0&amp;0&amp;1&amp;0\\
+0&amp;1&amp;0&amp;0\\
+\end{matrix}\right]
+\end{split}\]</div>
+</div>
+<div class="section" id="id1">
+<h2>1.3 什么是Little endians<a class="headerlink" href="#id1" title="永久链接至标题">¶</a></h2>
+<p>比如一个 16 进制的整数 “0x1234”，其二进制是 “0001 0010 0011 0100”，左边是高字节序，右边是低字节序。</p>
+<p>有时候CPU会一次读或者存多位数据，假设一次处理 8bit，也就是 1byte，那么下面的方式是明显符合我们逻辑的：<br />
+低地址 → → → 高地址<br />
+| 12 | - - - - - - | 34 |<br />
+这种方式被称作 Big endians，低地址放高字节序。\</p>
+<p>而当前流行的Intel和AMD大部分处理器都是采用了 Little endians，也就是低地址放低字节序：<br />
+低地址 → → → 高地址<br />
+| 34 | - - - - - - | 12 |\</p>
+<p>目前我并没有找到什么特殊的原因 “非这样做不可”。<br />
+但是需要注意，如果CPU读取方式和内存存放的方式不同，那么CPU在读取之后还需要进行一次重排，这会大大增加计算开销。
+另外网络传输数据也会受到该影响，降低传输效率。\</p>
+</div>
+</div>
+
+
+          </div>
+          
+        </div>
+      </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+        <div class="sphinxsidebarwrapper">
+<h1 class="logo"><a href="../index.html">Quantum Computing Learning</a></h1>
+
+
+
+
+
+
+
+
+<h3>导航</h3>
+<p class="caption" role="heading"><span class="caption-text">QISKIT</span></p>
+<ul class="current">
+<li class="toctree-l1 current"><a class="current reference internal" href="#">1. Little endians</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#cnot">1.1 CNOT门分解</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#what-happened-in-qiskit">1.2 What happened in qiskit</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#id1">1.3 什么是Little endians</a></li>
+</ul>
+</li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">CHIP</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../chip/00constant.html">附件：常量</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../chip/01impedance.html">1. 传输线的特征阻抗</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../chip/02imp-transf.html">2. λ/4阻抗变换特性</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../chip/03reflection-coeff-vswr.html">3. 反射系数和驻波比</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../chip/04total-reflection.html">4. 全反射阻抗变换</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../chip/05short-open-load.html">5. 负载短路和开路</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../chip/06qf.html">6. 品质因子</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../chip/07purcell-effect.html">7. Purcell effect</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../chip/08qubit-frequency.html">8. 比特频率</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../chip/09dispersion.html">9. 色散读取</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../chip/10qubit-couple-cavity.html">10. 比特与读取腔耦合</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../chip/11qubit-couple.html">11. 比特间可调耦合</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../chip/12control-line-couple.html">12. 控制线耦合强度</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">MAC</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../mac/01Johnson-Nyquist.html">1. 电压噪声谱密度</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../mac/02effective-noise-temp.html">2. 等效噪声温度</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../mac/03heat-load.html">3. 热负荷</a></li>
+</ul>
+
+<div class="relations">
+<h3>Related Topics</h3>
+<ul>
+  <li><a href="../index.html">Documentation overview</a><ul>
+      <li>Previous: <a href="../index.html" title="上一章">Quantum Computing Learning</a></li>
+      <li>Next: <a href="../chip/00constant.html" title="下一章">附件：常量</a></li>
+  </ul></li>
+</ul>
+</div>
+<div id="searchbox" style="display: none" role="search">
+  <h3 id="searchlabel">快速搜索</h3>
+    <div class="searchformwrapper">
+    <form class="search" action="../search.html" method="get">
+      <input type="text" name="q" aria-labelledby="searchlabel" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false"/>
+      <input type="submit" value="转向" />
+    </form>
+    </div>
+</div>
+<script>$('#searchbox').show(0);</script>
+
+
+
+
+
+
+
+
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="footer">
+      &copy;2023, imybfu@outlook.com.
+      
+      |
+      Powered by <a href="http://sphinx-doc.org/">Sphinx 4.4.0</a>
+      &amp; <a href="https://github.com/bitprophet/alabaster">Alabaster 0.7.12</a>
+      
+      |
+      <a href="../_sources/qiskit/01littlendians.md.txt"
+          rel="nofollow">Page source</a>
+    </div>
+
+    
+
+    
+  </body>
+</html>

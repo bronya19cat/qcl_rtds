@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="zh-CN" >
+<head>
+  <meta charset="utf-8" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>5. 负载短路 λ/4 和开路 λ/2 传输线可等效为并联LCR谐振腔 &mdash; quantum computing learning  文档</title>
+      <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+      <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
+  <!--[if lt IE 9]>
+    <script src="../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+        <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
+        <script src="../_static/jquery.js"></script>
+        <script src="../_static/underscore.js"></script>
+        <script src="../_static/doctools.js"></script>
+        <script src="../_static/translations.js"></script>
+        <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
+        <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <script src="../_static/js/theme.js"></script>
+    <link rel="index" title="索引" href="../genindex.html" />
+    <link rel="search" title="搜索" href="../search.html" />
+    <link rel="next" title="6. 谐振腔的品质因子" href="6.html" />
+    <link rel="prev" title="4. 全反射情况（开路、短路、纯电抗）阻抗变换" href="4.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+
+          
+          
+          <a href="../index.html" class="icon icon-home">
+            quantum computing learning
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <p class="caption" role="heading"><span class="caption-text">QISKIT</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../qiskit/01littlendians.html">1. Little endians</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">CHIP</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="1.html">1. 传输线的特征阻抗</a></li>
+<li class="toctree-l1"><a class="reference internal" href="2.html">2. λ/4阻抗变换特性</a></li>
+<li class="toctree-l1"><a class="reference internal" href="3.html">3. 反射系数和驻波比</a></li>
+<li class="toctree-l1"><a class="reference internal" href="4.html">4. 全反射情况（开路、短路、纯电抗）阻抗变换</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">5. 负载短路 λ/4 和开路 λ/2 传输线可等效为并联LCR谐振腔</a></li>
+<li class="toctree-l1"><a class="reference internal" href="6.html">6. 谐振腔的品质因子</a></li>
+<li class="toctree-l1"><a class="reference internal" href="7.html">7. Purcell effect</a></li>
+<li class="toctree-l1"><a class="reference internal" href="8.html">8. 比特频率</a></li>
+<li class="toctree-l1"><a class="reference internal" href="9.html">9. 色散读取</a></li>
+<li class="toctree-l1"><a class="reference internal" href="10.html">10. 比特与读取腔耦合</a></li>
+<li class="toctree-l1"><a class="reference internal" href="11.html">11. 比特间可调耦合</a></li>
+<li class="toctree-l1"><a class="reference internal" href="12.html">12. 控制线耦合强度</a></li>
+<li class="toctree-l1"><a class="reference internal" href="00constant.html">附件：设置常量</a></li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../index.html">quantum computing learning</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="../index.html" class="icon icon-home" aria-label="Home"></a></li>
+      <li class="breadcrumb-item active">5. 负载短路 λ/4 和开路 λ/2 传输线可等效为并联LCR谐振腔</li>
+      <li class="wy-breadcrumbs-aside">
+            <a href="../_sources/chipdesign/5.md.txt" rel="nofollow"> View page source</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section class="tex2jax_ignore mathjax_ignore" id="lcr">
+<h1>5. 负载短路 λ/4 和开路 λ/2 传输线可等效为并联LCR谐振腔<a class="headerlink" href="#lcr" title="永久链接至标题">¶</a></h1>
+<p>在 <a class="reference internal" href="4.html"><span class="doc std std-doc">Sec.4</span></a> 的输出结果中可以看到： short 和 open 阻抗曲线仅相差 <span class="math notranslate nohighlight">\(\lambda/4\)</span> ， 且<span class="math notranslate nohighlight">\(\lambda(1/4+1/2k)\)</span> 处的 short 和 <span class="math notranslate nohighlight">\(\lambda(1/2+1/2k)\)</span> 处的 open 都具有并联 LCR 阻抗特性，接下来具体分析。</p>
+<font size=2>
+<p>串联型LCR阻抗：Z=R+iwL+1/iwC;</p>
+<p><img alt="Alt text" src="../_images/lcr-series.jpg" /></p>
+<p><strong>并联型LCR阻抗：Z=1/(1/R+1/iwL+iwC);</strong></p>
+<p><img alt="Alt text" src="../_images/lcr-parallel.jpg" /></p>
+<ol class="arabic">
+<li><p>对于短路 λ/4 传输线：<span class="math notranslate nohighlight">\(Z_l=0, λ/4 = πv/2ω_r\)</span>；</p>
+<p>! <strong>考虑有损耗的情况：α≠0；</strong></p>
+<p>其中 <span class="math notranslate nohighlight">\(v=c_0/\sqrt{(\epsilon_{sub}+1)/2}\)</span> （<em>??? from wang th p33，存疑</em>）</p>
+<div class="math notranslate nohighlight">
+\[
+    Z_{in}^{\lambda/4}=Z_0 \tanh{[i(\pi/2+\pi\Delta\omega/2\omega_r)+\alpha \pi\nu/2\omega_r]}
+    \]</div>
+<p>当损耗很小α≈0；在谐振频率附近 <span class="math notranslate nohighlight">\(Δω/ω_r≈0\)</span>；</p>
+<div class="math notranslate nohighlight">
+\[
+    Z_{in}^{\lambda/4}=Z_0/(\alpha\pi\nu/2\omega_r+i\pi\Delta\omega/2\omega_r)
+    \]</div>
+<p>等效并联LCR：<span class="math notranslate nohighlight">\(C=\pi/(4\omega_r Z_0), L=1/(\omega^2_rC)=4Z_0/\pi\omega_r\)</span></p>
+</li>
+<li><p>对于开路 λ/2 传输线：<span class="math notranslate nohighlight">\(Z_l→\infty, λ/2 = πv/ω_r\)</span>；</p>
+<div class="math notranslate nohighlight">
+\[
+    Z_{in}^{\lambda/2}=Z_0/(\alpha\pi\nu/2\omega_r+i\pi\Delta\omega/\omega_r)
+    \]</div>
+<p>等效并联LCR：<span class="math notranslate nohighlight">\(C=\pi/(2\omega_r Z_0), L=1/(\omega^2_rC)=2Z_0/\pi\omega_r\)</span></p>
+</li>
+</ol>
+</font>
+<hr class="docutils" />
+<p>e.g. 计算CPW长度（波长）</p>
+<p>将共面波导的长度设计为波长的四分之一，衬底为高阻硅。</p>
+<p>6.5GHz 的四分之一共面波导的长度为 4543.2um。</p>
+<div class="highlight-py notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">numpy</span>
+
+<span class="c1"># 短路lambda/4传输线的电容、电感</span>
+<span class="k">def</span> <span class="nf">fun_lc_lamb4</span><span class="p">(</span><span class="n">wr0</span><span class="p">,</span><span class="n">z0</span><span class="p">):</span>
+    <span class="n">lc4</span><span class="o">=</span><span class="p">[</span><span class="mi">0</span><span class="p">,</span><span class="mi">0</span><span class="p">]</span>
+    <span class="n">wr</span><span class="o">=</span><span class="n">wr0</span><span class="o">*</span><span class="n">ghz</span> <span class="c1"># GHz</span>
+    <span class="n">lc4</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">=</span><span class="mi">4</span><span class="o">*</span><span class="n">z0</span><span class="o">/</span><span class="n">PI</span><span class="o">/</span><span class="n">wr</span><span class="o">/</span><span class="n">nm</span> <span class="c1"># L nH</span>
+    <span class="n">lc4</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span><span class="o">=</span><span class="n">PI</span><span class="o">/</span><span class="mi">4</span><span class="o">/</span><span class="n">wr</span><span class="o">/</span><span class="n">z0</span><span class="o">/</span><span class="n">fm</span> <span class="c1"># C fF</span>
+    <span class="k">return</span> <span class="n">lc4</span>
+<span class="c1"># 开路lambda/2传输线的电容、电感</span>
+<span class="k">def</span> <span class="nf">fun_lc_lamb2</span><span class="p">(</span><span class="n">wr0</span><span class="p">,</span><span class="n">z0</span><span class="p">):</span>
+    <span class="n">lc2</span><span class="o">=</span><span class="p">[</span><span class="mi">0</span><span class="p">,</span><span class="mi">0</span><span class="p">]</span>
+    <span class="n">wr</span><span class="o">=</span><span class="n">wr0</span><span class="o">*</span><span class="n">ghz</span>
+    <span class="n">lc2</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">=</span><span class="mi">2</span><span class="o">*</span><span class="n">z0</span><span class="o">/</span><span class="n">PI</span><span class="o">/</span><span class="n">wr</span><span class="o">/</span><span class="n">nm</span>
+    <span class="n">lc2</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span><span class="o">=</span><span class="n">PI</span><span class="o">/</span><span class="mi">2</span><span class="o">/</span><span class="n">wr</span><span class="o">/</span><span class="n">z0</span><span class="o">/</span><span class="n">fm</span>
+    <span class="k">return</span> <span class="n">lc2</span>
+<span class="c1"># 输入频率计算谐振波的波长</span>
+<span class="k">def</span> <span class="nf">fun_lamb</span><span class="p">(</span><span class="n">epsub</span><span class="p">,</span><span class="n">wr0</span><span class="p">):</span>
+    <span class="n">wr</span><span class="o">=</span><span class="n">wr0</span><span class="o">*</span><span class="n">ghz</span>
+    <span class="n">v</span><span class="o">=</span><span class="n">C</span><span class="o">/</span><span class="n">numpy</span><span class="o">.</span><span class="n">sqrt</span><span class="p">((</span><span class="n">epsub</span><span class="o">+</span><span class="mi">1</span><span class="p">)</span><span class="o">/</span><span class="mi">2</span><span class="p">)</span>
+    <span class="c1"># v=c0/numpy.sqrt(epsub*1) # ur=1</span>
+    <span class="n">lamb</span><span class="o">=</span><span class="n">PI2</span><span class="o">*</span><span class="n">v</span><span class="o">/</span><span class="n">wr</span>
+    <span class="k">return</span> <span class="n">lamb</span><span class="o">/</span><span class="n">um</span> <span class="c1"># um</span>
+
+<span class="c1"># z0=zz0(11.9,10,5,11.9,2,250,40)</span>
+<span class="c1"># print(&quot;阻抗：&quot;, z0)</span>
+<span class="n">wr</span><span class="o">=</span><span class="n">PI2</span><span class="o">*</span><span class="mf">6.5</span>
+<span class="n">z0</span><span class="o">=</span><span class="mi">50</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;6.5GHz, 50ohm&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;</span><span class="se">\n</span><span class="s2">短路1/4波长, 长度: &quot;</span><span class="p">,</span> <span class="n">fun_lamb</span><span class="p">(</span><span class="mf">11.9</span><span class="p">,</span><span class="n">wr</span><span class="p">)</span><span class="o">/</span><span class="mi">4</span><span class="p">,</span> <span class="s2">&quot;um&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;电感: &quot;</span><span class="p">,</span> <span class="n">fun_lc_lamb4</span><span class="p">(</span><span class="n">wr</span><span class="p">,</span><span class="n">z0</span><span class="p">)[</span><span class="mi">0</span><span class="p">],</span> <span class="s2">&quot;nH, 电容：&quot;</span><span class="p">,</span> <span class="n">fun_lc_lamb4</span><span class="p">(</span><span class="n">wr</span><span class="p">,</span><span class="n">z0</span><span class="p">)[</span><span class="mi">1</span><span class="p">],</span> <span class="s2">&quot;fF&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;</span><span class="se">\n</span><span class="s2">开路1/2波长, 长度: &quot;</span><span class="p">,</span> <span class="n">fun_lamb</span><span class="p">(</span><span class="mf">11.9</span><span class="p">,</span><span class="n">wr</span><span class="p">)</span><span class="o">/</span><span class="mi">2</span><span class="p">,</span> <span class="s2">&quot;um&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;电感: &quot;</span><span class="p">,</span> <span class="n">fun_lc_lamb2</span><span class="p">(</span><span class="n">wr</span><span class="p">,</span><span class="n">z0</span><span class="p">)[</span><span class="mi">0</span><span class="p">],</span> <span class="s2">&quot;nH, 电容：&quot;</span><span class="p">,</span> <span class="n">fun_lc_lamb2</span><span class="p">(</span><span class="n">wr</span><span class="p">,</span><span class="n">z0</span><span class="p">)[</span><span class="mi">1</span><span class="p">],</span> <span class="s2">&quot;fF&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>6.5GHz, 50ohm
+
+短路1/4波长, 长度:  4543.264793989372 um
+电感:  1.5587874406513502 nH, 电容： 384.6153846153846 fF
+
+开路1/2波长, 长度:  9086.529587978745 um
+电感:  0.7793937203256751 nH, 电容： 769.2307692307692 fF
+</pre></div>
+</div>
+</section>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="4.html" class="btn btn-neutral float-left" title="4. 全反射情况（开路、短路、纯电抗）阻抗变换" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="6.html" class="btn btn-neutral float-right" title="6. 谐振腔的品质因子" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; 版权所有 2023, imybfu.</p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

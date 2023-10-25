@@ -9,35 +9,36 @@ Quantum Computing Learning
    :maxdepth: 2
    :caption: QISKIT
 
-   qcl/qiskit/01littlendians.md
+   qiskit/01qiskit.md
+   qiskit/02littlendians.md
 
 .. toctree::
    :maxdepth: 2
    :caption: CHIP
 
-   qcl/chip/00constant.md
-   qcl/chip/01impedance.md
-   qcl/chip/02imp-transf.md
-   qcl/chip/03reflection-coeff-vswr.md
-   qcl/chip/04total-reflection.md
-   qcl/chip/05short-open-load.md
-   qcl/chip/06qf.md
-   qcl/chip/07purcell-effect.md
-   qcl/chip/08qubit-frequency.md
-   qcl/chip/09dispersion.md
-   qcl/chip/10qubit-couple-cavity.md
-   qcl/chip/11qubit-couple.md
-   qcl/chip/12control-line-couple.md
+   chip/00constant.md
+   chip/01传输线的特征阻抗.md
+   chip/02阻抗变换特性.md
+   chip/03反射系数和驻波比.md
+   chip/04全反射阻抗变换.md
+   chip/05负载短路和开路.md
+   chip/06品质因子.md
+   chip/07purcell-effect.md
+   chip/08比特频率.md
+   chip/09色散读取.md
+   chip/10比特与腔耦合.md
+   chip/11比特间可调耦合.md
+   chip/12控制线耦合强度.md
 
 .. toctree::
    :maxdepth: 2
    :caption: MAC
 
-   qcl/mac/01Johnson-Nyquist.md
-   qcl/mac/02effective-noise-temp.md
-   qcl/mac/03heat-load.md
+   mac/01电压噪声谱密度.md
+   mac/02等效噪声温度.md
+   mac/03线缆热负荷.md
 
-Indices and tables
+Indices and Tables
 ==================
 * :ref:`genindex`
 * :ref:`modindex`
