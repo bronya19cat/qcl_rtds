@@ -171,6 +171,8 @@
   "lastOpenFiles": [
     "mac/02等效噪声温度.md",
     "mac/01电压噪声谱密度.md",
+    "chip/11比特间可调耦合.md",
+    "chip/12控制线耦合强度.md",
     "mac/03线缆热负荷.md",
     "qiskit/01qiskit.md",
     "chip/02阻抗变换特性.md",
@@ -181,8 +183,6 @@
     "index.rst~",
     "chip/07purcell-effect.md",
     "chip/00constant.md",
-    "chip/12控制线耦合强度.md",
-    "chip/11比特间可调耦合.md",
     "chip/10比特与腔耦合.md",
     "chip/09色散读取.md",
     "chip/08比特频率.md",
