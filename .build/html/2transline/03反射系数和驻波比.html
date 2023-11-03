@@ -1,0 +1,139 @@
+
+<!DOCTYPE html>
+
+<html lang="zh_CN">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>3. 反射系数和驻波比 &#8212; Quantum Computing Learning  文档</title>
+    <link rel="stylesheet" type="text/css" href="../_static/pygments.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/alabaster.css" />
+    <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
+    <script src="../_static/jquery.js"></script>
+    <script src="../_static/underscore.js"></script>
+    <script src="../_static/doctools.js"></script>
+    <script src="../_static/translations.js"></script>
+    <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
+    <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <link rel="index" title="索引" href="../genindex.html" />
+    <link rel="search" title="搜索" href="../search.html" />
+   
+  <link rel="stylesheet" href="../_static/custom.css" type="text/css" />
+  
+  
+  <meta name="viewport" content="width=device-width, initial-scale=0.9, maximum-scale=0.9" />
+
+  </head><body>
+  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          
+
+          <div class="body" role="main">
+            
+  <div class="tex2jax_ignore mathjax_ignore section" id="id1">
+<h1>3. 反射系数和驻波比<a class="headerlink" href="#id1" title="永久链接至标题">¶</a></h1>
+<p>由 <a class="reference internal" href="02%E9%98%BB%E6%8A%97%E5%8F%98%E6%8D%A2%E7%89%B9%E6%80%A7.html"><span class="doc std std-doc">Sec.2</span></a> 传输方程 <span class="math notranslate nohighlight">\((2.1)\)</span> ，得出反射系数：</p>
+<div class="math notranslate nohighlight">
+\[
+\Gamma_u(z)=\frac{u^-}{u^+}=\frac{A_2}{A_1}e^{-2j\gamma z}=-\Gamma_i(z)
+\]</div>
+<p>令</p>
+<div class="math notranslate nohighlight">
+\[
+\Gamma=\frac{A_2}{A_1}=|\Gamma|e^{j\phi}
+\]</div>
+<p>则</p>
+<div class="math notranslate nohighlight">
+\[
+\Gamma_u(z)=|\Gamma|e^{j\phi-2j\gamma z}
+\]</div>
+<p>由于</p>
+<div class="math notranslate nohighlight">
+\[
+\frac{A_2}{A_1}=\frac{Z_1-Z_0}{Z_1+Z_0}
+\]</div>
+<p>因此，当阻抗匹配时，i.e. 负载阻抗=传输线特征阻抗，<span class="math notranslate nohighlight">\(|\Gamma|=0\)</span> ，也就是无反射。</p>
+<hr class="docutils" />
+<p>当存在反射波的情况下，由于它和入射波具有相同的频率，两者将形成一个稳定的叠加状态——驻波。</p>
+<p>![[standing-wave.png]]</p>
+<p>![[standing-wave.gif]]</p>
+<p>上图是在不同时间下电压入射波和反射波的情况，可以看出叠加波形的波腹和波节位置是固定不变的，因此叫做驻波。而电压驻波比 VSWR 就是入射波与反射波振幅之和 / 振幅之差：</p>
+<div class="math notranslate nohighlight">
+\[
+\rho=\frac{A_1+A_2}{A_1-A_2}
+\]</div>
+<p>可以用反射系数表示电压驻波比VSWR：</p>
+<div class="math notranslate nohighlight">
+\[
+\rho=\frac{1+\frac{A_2}{A_1}}{1-\frac{A_2}{A_1}}=\frac{1+|\Gamma|}{1-|\Gamma|}
+\]</div>
+<p>驻波比是一个反应输出效率的量。当阻抗匹配时，反射系数 = 0，驻波比 = 1，这时输出信号全部进入负载；当反射系数接近 1 时，驻波比接近无穷大，信号输出效率极低。</p>
+</div>
+
+
+          </div>
+          
+        </div>
+      </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+        <div class="sphinxsidebarwrapper">
+<h1 class="logo"><a href="../index.html">Quantum Computing Learning</a></h1>
+
+
+
+
+
+
+
+
+<h3>导航</h3>
+
+<div class="relations">
+<h3>Related Topics</h3>
+<ul>
+  <li><a href="../index.html">Documentation overview</a><ul>
+  </ul></li>
+</ul>
+</div>
+<div id="searchbox" style="display: none" role="search">
+  <h3 id="searchlabel">快速搜索</h3>
+    <div class="searchformwrapper">
+    <form class="search" action="../search.html" method="get">
+      <input type="text" name="q" aria-labelledby="searchlabel" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false"/>
+      <input type="submit" value="转向" />
+    </form>
+    </div>
+</div>
+<script>$('#searchbox').show(0);</script>
+
+
+
+
+
+
+
+
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="footer">
+      &copy;2023, imybfu@outlook.com.
+      
+      |
+      Powered by <a href="http://sphinx-doc.org/">Sphinx 4.4.0</a>
+      &amp; <a href="https://github.com/bitprophet/alabaster">Alabaster 0.7.12</a>
+      
+      |
+      <a href="../_sources/2transline/03反射系数和驻波比.md.txt"
+          rel="nofollow">Page source</a>
+    </div>
+
+    
+
+    
+  </body>
+</html>

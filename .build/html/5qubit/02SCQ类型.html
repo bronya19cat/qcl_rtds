@@ -1,0 +1,117 @@
+
+<!DOCTYPE html>
+
+<html lang="zh_CN">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>2. SCQ类型 &#8212; Quantum Computing Learning  文档</title>
+    <link rel="stylesheet" type="text/css" href="../_static/pygments.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/alabaster.css" />
+    <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
+    <script src="../_static/jquery.js"></script>
+    <script src="../_static/underscore.js"></script>
+    <script src="../_static/doctools.js"></script>
+    <script src="../_static/translations.js"></script>
+    <link rel="index" title="索引" href="../genindex.html" />
+    <link rel="search" title="搜索" href="../search.html" />
+   
+  <link rel="stylesheet" href="../_static/custom.css" type="text/css" />
+  
+  
+  <meta name="viewport" content="width=device-width, initial-scale=0.9, maximum-scale=0.9" />
+
+  </head><body>
+  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          
+
+          <div class="body" role="main">
+            
+  <div class="tex2jax_ignore mathjax_ignore section" id="scq">
+<h1>2. SCQ类型<a class="headerlink" href="#scq" title="永久链接至标题">¶</a></h1>
+<p>根据不同的自由度，超导量子比特主要分为:电荷（charge）、磁通（flux）和相位（phase）量子比特三类。三类量子比特的区别体现在约瑟夫森和电荷的能量比的大小。</p>
+<ol class="arabic simple">
+<li><p>电荷量子比特也称为库珀对盒CPB（Cooper-pair box）量子比特，Ej/Ec&lt;1，不同的能级对应于超导岛上的库珀对的数量。</p></li>
+<li><p>磁通量子比特的的基本结构是由一个电感与一个约瑟夫森结构造而成。EJ/Ec大约在10左右，磁场的能量占主导，能级对应于超导环路中不同数量的磁通量子。</p></li>
+<li><p>相位量子比特是电流偏置的单约瑟夫森结器件，EJ/Ec数量级在10^6，能级对应于穿过约瑟夫森结的不同量子电荷振荡振幅。</p></li>
+</ol>
+<p>在以上三种超导量子比特原型的基础上，衍生出许多新形式的超导量子比特：如Transmon型量子比特、C型分流磁通量子比特、Fluxonium、Unimon、0-π量子比特、混合量子比特等。</p>
+<ol class="arabic simple">
+<li><p>Transmon全称是传输线分流等离子体振荡量子比特（ transmission line shunted plasma oscillation qubit），由耶鲁大学的 Robert J. Schoelkopf, Michel Devoret, Steven M. Girvin 等人于2007年基于电荷量子比特开发。通过在CPB的基础上额外并联一个对地的大电容分流，显著地提高了约瑟夫森和电荷的能量比，进而降低量子比特对电荷噪声的敏感性。在最初的设计中，这个额外的对地电容是通过叉指电容来实现的。</p></li>
+</ol>
+<p>在Transmon的基础上进一步发展出了不同的版本，如Xmon、Gatemon、Gmon、3D Transmon等。</p>
+<ol class="arabic simple">
+<li><p>Xmon 通过一个十字型的结构来实现与地之间的额外电容（有些文章里会讲transmon没有共地面的连接）。这种结构的优点在于电容形状容易调节，使得比特与比特耦合方面更加容易。十字形的分压电容在实现相同电容值的时候，体积更小，有利于提高芯片集成度，而且它的形状非常适合需要密堆积qubit网格的表面代码体系结构。</p></li>
+<li><p>Gatemon同样是一个transmon的可调版本，通过栅极来调节。Gmon基于Xmon量子比特，量子比特用一个结连接，其作为一个可调谐的电感来控制耦合强度，Gmon结构可以避免固定耦合产生的频率拥挤问题。</p></li>
+<li><p>3D Transmon的最大特点是用三维波导腔代替了平面传输线腔，优点包括：腔体具有更大的模式体积，对表面电介质损耗的敏感度更低；其次，该架构为量子比特提供了良好的可控电磁环境。因此，这种结构可以抑制量子比特退相干，同时保持与控制信号的充分耦合。然而，如果想建立基于三维Transmon的大规模设备，可扩展性将是主要困难。</p></li>
+</ol>
+</div>
+
+
+          </div>
+          
+        </div>
+      </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+        <div class="sphinxsidebarwrapper">
+<h1 class="logo"><a href="../index.html">Quantum Computing Learning</a></h1>
+
+
+
+
+
+
+
+
+<h3>导航</h3>
+
+<div class="relations">
+<h3>Related Topics</h3>
+<ul>
+  <li><a href="../index.html">Documentation overview</a><ul>
+  </ul></li>
+</ul>
+</div>
+<div id="searchbox" style="display: none" role="search">
+  <h3 id="searchlabel">快速搜索</h3>
+    <div class="searchformwrapper">
+    <form class="search" action="../search.html" method="get">
+      <input type="text" name="q" aria-labelledby="searchlabel" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false"/>
+      <input type="submit" value="转向" />
+    </form>
+    </div>
+</div>
+<script>$('#searchbox').show(0);</script>
+
+
+
+
+
+
+
+
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="footer">
+      &copy;2023, imybfu@outlook.com.
+      
+      |
+      Powered by <a href="http://sphinx-doc.org/">Sphinx 4.4.0</a>
+      &amp; <a href="https://github.com/bitprophet/alabaster">Alabaster 0.7.12</a>
+      
+      |
+      <a href="../_sources/5qubit/02SCQ类型.md.txt"
+          rel="nofollow">Page source</a>
+    </div>
+
+    
+
+    
+  </body>
+</html>

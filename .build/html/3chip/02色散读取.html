@@ -1,0 +1,135 @@
+
+<!DOCTYPE html>
+
+<html lang="zh_CN">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>2. 色散读取 &#8212; Quantum Computing Learning  文档</title>
+    <link rel="stylesheet" type="text/css" href="../_static/pygments.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/alabaster.css" />
+    <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
+    <script src="../_static/jquery.js"></script>
+    <script src="../_static/underscore.js"></script>
+    <script src="../_static/doctools.js"></script>
+    <script src="../_static/translations.js"></script>
+    <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
+    <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <link rel="index" title="索引" href="../genindex.html" />
+    <link rel="search" title="搜索" href="../search.html" />
+   
+  <link rel="stylesheet" href="../_static/custom.css" type="text/css" />
+  
+  
+  <meta name="viewport" content="width=device-width, initial-scale=0.9, maximum-scale=0.9" />
+
+  </head><body>
+  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          
+
+          <div class="body" role="main">
+            
+  <div class="tex2jax_ignore mathjax_ignore section" id="id1">
+<h1>2. 色散读取<a class="headerlink" href="#id1" title="永久链接至标题">¶</a></h1>
+<p><img alt="Alt text" src="3chip/dispersive-shift.jpg" /></p>
+<p>（两能级、三能级、六能级模型下，谐振腔频率/腔内光子数随测量强度的变化，红线对应的是比特处于 |0⟩，蓝色虚线对应 |1⟩，灰色虚线对应 |2⟩。）</p>
+<p>由于比特与读取腔耦合后，读取腔本身的频率发生变化，理论上很难测量到腔的本征频率。但是当读取腔内的光子数较多时，腔的频率逐渐接近本征频率。因此 <span class="math notranslate nohighlight">\(\omega_r\)</span> 可以采用高功率进行快速标定。</p>
+<p>在 <span class="math notranslate nohighlight">\(g/\Delta &lt;&lt; 1\)</span> 的色散区域（dispersive regime），谐振子的共振频率 <span class="math notranslate nohighlight">\(\omega_r\)</span> 受量子比特影响产生位移（shift） <span class="math notranslate nohighlight">\(\chi\)</span> ，其中 <span class="math notranslate nohighlight">\(\Delta=\omega_q-\omega_r\)</span> 是量子比特和谐振子的频率差。</p>
+<ol class="arabic">
+<li><p>对于两能级系统，低功率下的读取腔的频率在比特不同态下有区分，而光子数几乎没有区别。</p>
+<div class="math notranslate nohighlight">
+\[
+    \chi=g^2/\Delta
+    \tag{9.1}
+    \]</div>
+<ul class="simple">
+<li><p>当 <span class="math notranslate nohighlight">\(q\rightarrow\ket{1}\)</span> , 谐振腔的共振频率发生偏移 <span class="math notranslate nohighlight">\(\omega_r+\chi\)</span></p></li>
+<li><p>当 <span class="math notranslate nohighlight">\(q\rightarrow\ket{0}\)</span> , 谐振腔的共振频率发生偏移 <span class="math notranslate nohighlight">\(\omega_r-\chi\)</span></p></li>
+</ul>
+</li>
+<li><p>考虑到量子比特存在更高能级，在三能级模型中，不仅低功率下频率有区别，高功率下的光子数也有区别。</p>
+<div class="math notranslate nohighlight">
+\[
+    \chi=g^2/\Delta(1+\Delta/(\omega_{21}-\omega_{10}))
+    \tag{9.2}
+    \]</div>
+</li>
+</ol>
+<hr class="docutils" />
+<p>e.g. 求色散位移</p>
+<p>qubit 和 res 频率差 1GHz，耦合强度为 50MHz，非谐性 -230MHz。色散位移为 -0.467Mhz。</p>
+<div class="highlight-py notranslate"><div class="highlight"><pre><span></span><span class="n">计算色散位移量</span><span class="p">:</span> <span class="o">-</span><span class="mf">2.5000000000000004</span> <span class="n">MHz</span>
+<span class="n">高阶修正</span><span class="p">:</span> <span class="o">-</span><span class="mf">0.467479674796748</span> <span class="n">MHz</span>
+</pre></div>
+</div>
+<p><img alt="Alt text" src="3chip/dispersive-region.png" /></p>
+</div>
+
+
+          </div>
+          
+        </div>
+      </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+        <div class="sphinxsidebarwrapper">
+<h1 class="logo"><a href="../index.html">Quantum Computing Learning</a></h1>
+
+
+
+
+
+
+
+
+<h3>导航</h3>
+
+<div class="relations">
+<h3>Related Topics</h3>
+<ul>
+  <li><a href="../index.html">Documentation overview</a><ul>
+  </ul></li>
+</ul>
+</div>
+<div id="searchbox" style="display: none" role="search">
+  <h3 id="searchlabel">快速搜索</h3>
+    <div class="searchformwrapper">
+    <form class="search" action="../search.html" method="get">
+      <input type="text" name="q" aria-labelledby="searchlabel" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false"/>
+      <input type="submit" value="转向" />
+    </form>
+    </div>
+</div>
+<script>$('#searchbox').show(0);</script>
+
+
+
+
+
+
+
+
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="footer">
+      &copy;2023, imybfu@outlook.com.
+      
+      |
+      Powered by <a href="http://sphinx-doc.org/">Sphinx 4.4.0</a>
+      &amp; <a href="https://github.com/bitprophet/alabaster">Alabaster 0.7.12</a>
+      
+      |
+      <a href="../_sources/3chip/02色散读取.md.txt"
+          rel="nofollow">Page source</a>
+    </div>
+
+    
+
+    
+  </body>
+</html>
