@@ -31,19 +31,21 @@ def delete_lines_with_string(file_path, string):
 
 
 # 指定目录路径
-directory1 = 'qiskit'
-directory2 = 'chip'
-directory3 = 'mac'
-directory4 = 'qubit'
+directory1 = '1qiskit'
+directory2 = '2transline'
+directory3 = '3chip'
+directory4 = '4heatload'
+directory5 = '5qubit'
 
 # 文件名字包含的字符
 string_incoulded = ".md"
 
 # 指定目标字符串
 target_position1 = '   :caption: QISKIT'
-target_position2 = '   :caption: CHIP'
-target_position3 = '   :caption: MAC'
-target_position4 = '   :caption: QUBIT'
+target_position2 = '   :caption: TRANS-LINE'
+target_position3 = '   :caption: CHIP'
+target_position4 = '   :caption: HEAT-LOAD'
+target_position5 = '   :caption: QUBIT'
 
 # 删除包含'md'的行
 delete_lines_with_string('index.rst', 'md')
@@ -53,6 +55,7 @@ add_filenames(directory1, string_incoulded, target_position1)
 add_filenames(directory2, string_incoulded, target_position2)
 add_filenames(directory3, string_incoulded, target_position3)
 add_filenames(directory4, string_incoulded, target_position4)
+add_filenames(directory5, string_incoulded, target_position5)
 
 def add_empty_line_before_string(file_path, string):
     with open(file_path, 'r') as file:
