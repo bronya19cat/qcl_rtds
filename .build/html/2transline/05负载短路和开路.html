@@ -38,11 +38,11 @@
   <div class="tex2jax_ignore mathjax_ignore section" id="id1">
 <h1>5. 负载短路和开路<a class="headerlink" href="#id1" title="永久链接至标题">¶</a></h1>
 <p>负载短路 λ/4 和开路 λ/2 传输线可等效为并联LCR谐振腔</p>
-<p>在 <a class="reference internal" href="04%E5%85%A8%E5%8F%8D%E5%B0%84%E9%98%BB%E6%8A%97%E5%8F%98%E6%8D%A2.html"><span class="doc std std-doc">Sec.4</span></a> 的输出结果中可以看到： short 和 open 阻抗曲线仅相差 <span class="math notranslate nohighlight">\(\lambda/4\)</span> ， 且<span class="math notranslate nohighlight">\(\lambda(1/4+1/2k)\)</span> 处的 short 和 <span class="math notranslate nohighlight">\(\lambda(1/2+1/2k)\)</span> 处的 open 都具有并联 LCR 阻抗特性，接下来具体分析。</p>
+<p>在 <a class="reference internal" href="04%E5%85%A8%E5%8F%8D%E5%B0%84%E9%98%BB%E6%8A%97%E5%8F%98%E6%8D%A2.html"><span class="doc std std-doc">Sec 4</span></a> 的输出结果中可以看到： short 和 open 阻抗曲线仅相差 <span class="math notranslate nohighlight">\(\lambda/4\)</span> ， 且<span class="math notranslate nohighlight">\(\lambda(1/4+1/2k)\)</span> 处的 short 和 <span class="math notranslate nohighlight">\(\lambda(1/2+1/2k)\)</span> 处的 open 都具有并联 LCR 阻抗特性，接下来具体分析。</p>
 <p>串联型LCR阻抗：Z=R+iwL+1/iwC;</p>
-<p><img alt="Alt text" src="2transline/lcr-series.jpg" /></p>
+<p><img alt="Alt text" src="../_images/lcr-series.jpg" /></p>
 <p><strong>并联型LCR阻抗：Z=1/(1/R+1/iwL+iwC);</strong></p>
-<p><img alt="Alt text" src="2transline/lcr-parallel.jpg" /></p>
+<p><img alt="Alt text" src="../_images/lcr-parallel.jpg" /></p>
 <ol class="arabic">
 <li><p>对于短路 λ/4 传输线：<span class="math notranslate nohighlight">\(Z_l=0, λ/4 = πv/2ω_r\)</span>；</p>
 <p>! <strong>考虑有损耗的情况：α≠0；</strong></p>
@@ -70,7 +70,7 @@
 <p>e.g. 计算CPW长度（波长）</p>
 <p>将共面波导的长度设计为波长的四分之一，衬底为高阻硅。</p>
 <p>6.5GHz 的四分之一共面波导的长度为 4543.2um。</p>
-<div class="highlight-py notranslate"><div class="highlight"><pre><span></span>6.5GHz, 50ohm
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>6.5GHz, 50ohm
 
 短路1/4波长, 长度:  4543.264793989372 um
 电感:  1.5587874406513502 nH, 电容： 384.6153846153846 fF

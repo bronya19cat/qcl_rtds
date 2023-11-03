@@ -16,7 +16,7 @@ $$
 
 2. 外部品质因子 $Q_c$ 来源于谐振腔与外部传输线的耦合。
 
-    ![Alt text](couple-res-bus.jpg)
+    ![Alt text](image/couple-res-bus.jpg)
 
     在上图中，体系存储的平均能量 $C_rV_r^2/2$ 和能量耗散速率 $V_k^2/2Z_{ext}$ 。由于在一般情况下耦合电容的容抗 $Z_k=1/ω_rC_k$ 远大于传输线引起的外部阻抗 $Z_{ext}$ ，所以，
 

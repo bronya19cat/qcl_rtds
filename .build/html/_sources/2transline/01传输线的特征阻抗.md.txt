@@ -12,7 +12,7 @@
     \tag{1.2}
     $$
 
-	![Alt text](cpw.png)
+![Alt text](image/cpw.png)
 
     （K 是第一类椭圆积分，$k=\frac{s}{s+2w}$，s 是中心导体的宽度，w 是导体距地面距离、沟宽。）
 
@@ -33,7 +33,7 @@ e.g. 计算Z0
 
 bridge 的宽度 W=2um，CPW 的 w 为 5um，s 为10um，绝缘层的材质为高阻硅厚度为 250nm，衬底为蓝宝石。
 
-![Alt text](table-z0.jpg)
+![Alt text](image/table-z0.jpg)
 
 ```py
 sapphire-z0: 

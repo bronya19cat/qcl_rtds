@@ -49,9 +49,13 @@
     C_0=2 \epsilon_0 (\epsilon^{sub}_r+1) \frac{K(k)}{K(\sqrt{1-k^2})}
     \tag{1.2}
     \]</div>
-<p><img alt="Alt text" src="2transline/cpw.png" /></p>
-<p>（K 是第一类椭圆积分，<span class="math notranslate nohighlight">\(k=\frac{s}{s+2w}\)</span>，s 是中心导体的宽度，w 是导体距地面距离、沟宽。）</p>
 </li>
+</ul>
+<p><img alt="Alt text" src="../_images/cpw.png" /></p>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>（K 是第一类椭圆积分，$k=\frac{s}{s+2w}$，s 是中心导体的宽度，w 是导体距地面距离、沟宽。）
+</pre></div>
+</div>
+<ul>
 <li><p>考虑air-bridge作用，bridge 与 CPW 中心导体形成平行板电容，额外的电容 <span class="math notranslate nohighlight">\(C_b= \frac{\epsilon _0 \epsilon^{insu}_rS}{dD}\)</span> 会引入到特征阻抗的计算当中，修正结果</p>
 <div class="math notranslate nohighlight">
 \[
@@ -66,7 +70,7 @@
 <p>蓝宝石er=10，s=10，w=5；硅er=11.9，s=10，w=6。
 阻抗模拟分别为52.9165，48.8644 ohm。</p>
 <p>bridge 的宽度 W=2um，CPW 的 w 为 5um，s 为10um，绝缘层的材质为高阻硅厚度为 250nm，衬底为蓝宝石。</p>
-<p><img alt="Alt text" src="2transline/table-z0.jpg" /></p>
+<p><img alt="Alt text" src="../_images/table-z0.jpg" /></p>
 <div class="highlight-py notranslate"><div class="highlight"><pre><span></span><span class="n">sapphire</span><span class="o">-</span><span class="n">z0</span><span class="p">:</span> 
 <span class="n">参考值</span><span class="p">:</span> <span class="mi">53</span><span class="p">,</span> <span class="n">计算</span><span class="p">:</span> <span class="mf">52.91650051773072</span>
 

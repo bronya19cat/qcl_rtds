@@ -45,7 +45,7 @@ S_{V2}(f,R,T) = 4k_BRT \frac{hf}{k_BT} \frac{1}{exp(hf/k_BT)-1}
 \]</div>
 <p>在 300K 常温下，RF 频段（GHz），<span class="math notranslate nohighlight">\(hf&lt;&lt;k_BT\)</span> （比值约在万分之一）。计算得到 <span class="math notranslate nohighlight">\(hf\frac{1}{exp(hf/k_BT)-1}\approx k_BT\)</span>，也就是说 <span class="math notranslate nohighlight">\(S_{V2}\approx 4k_BRT\)</span>，这就是白噪声。</p>
 <p>并且，白噪声的频谱是均匀分布的，在所有频率上都有相同的能量密度。从量子的角度解释，温度引起了光子数涨落，进而和量子比特耦合，其密度为 <span class="math notranslate nohighlight">\(n(T,f)=\frac{1}{exp(hf/k_BT)-1}\)</span> 。（单位： <span class="math notranslate nohighlight">\(Hz^{-1} s^{-1}\)</span> )</p>
-<p><img alt="Alt text" src="4heatload/Pasted-image-20231024195025.png" /></p>
+<p><img alt="Alt text" src="../_images/Pasted-image-20231024195025.png" /></p>
 <p>从上图可以看到，频率越高，热激发产生的光子数密度越低，但是同时光子频率越高，单光子能量也高，因此最终的噪声密度 <span class="math notranslate nohighlight">\(S_{V2}\approx 4k_BRT\)</span> 仍是一个与 f 无关的定值（在 300K 下）。</p>
 <p><mark>Q1：既然热噪声分布在全频段，并且其强度仅和温度有关，和输入信号无关。那么这里为何仅针对 f 频率的热光子？是否热噪声仅仅对相应频率的信号影响较大？</mark></p>
 <p>A1：在 REF.KONG.P57 找到了答案 “对于 qubit readout 线路来说，实际有影响的是频率𝑓𝑐附近的噪声成分”，这对于其他线路应该也是一样的。</p>
@@ -81,7 +81,7 @@ S_{V2}(f,R,T) = 4k_BRT \frac{hf}{k_BT} \frac{1}{exp(hf/k_BT)-1}
 </ul>
 <p>（3）CP-MC 使用的是 NbTi 线，极低温下基本没有损耗；300mm 半柔线插损为1.44dB，<br />
 （4）LPF 5850+插损为0.83dB；LPF 500+插损为0.94dB。</p>
-<p><img alt="Alt text" src="4heatload/Pasted-image-20231024195448.png" /></p>
+<p><img alt="Alt text" src="../_images/Pasted-image-20231024195448.png" /></p>
 <p>可以看出</p>
 <ul class="simple">
 <li><p>只有在 20 mK 层，噪声谱对频率敏感，这时热光子能量 <span class="math notranslate nohighlight">\(hf\)</span> 接近热力学标度 <span class="math notranslate nohighlight">\(k_BT\)</span>；</p></li>

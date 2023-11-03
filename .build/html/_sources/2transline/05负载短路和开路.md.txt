@@ -2,15 +2,15 @@
 
 负载短路 λ/4 和开路 λ/2 传输线可等效为并联LCR谐振腔
 
-在 [Sec.4](04全反射阻抗变换.md) 的输出结果中可以看到： short 和 open 阻抗曲线仅相差 $\lambda/4$ ， 且$\lambda(1/4+1/2k)$ 处的 short 和 $\lambda(1/2+1/2k)$ 处的 open 都具有并联 LCR 阻抗特性，接下来具体分析。
+在 [Sec 4](04全反射阻抗变换.md) 的输出结果中可以看到： short 和 open 阻抗曲线仅相差 $\lambda/4$ ， 且$\lambda(1/4+1/2k)$ 处的 short 和 $\lambda(1/2+1/2k)$ 处的 open 都具有并联 LCR 阻抗特性，接下来具体分析。
 
 串联型LCR阻抗：Z=R+iwL+1/iwC;
 
-![Alt text](lcr-series.jpg)
+![Alt text](image/lcr-series.jpg)
 
 **并联型LCR阻抗：Z=1/(1/R+1/iwL+iwC);**
 
-![Alt text](lcr-parallel.jpg)
+![Alt text](image/lcr-parallel.jpg)
 
 1. 对于短路 λ/4 传输线：$Z_l=0, λ/4 = πv/2ω_r$；
 
@@ -45,7 +45,7 @@ e.g. 计算CPW长度（波长）
 
 6.5GHz 的四分之一共面波导的长度为 4543.2um。
 
-```py
+```
 6.5GHz, 50ohm
 
 短路1/4波长, 长度:  4543.264793989372 um

@@ -37,7 +37,7 @@
             
   <div class="tex2jax_ignore mathjax_ignore section" id="id1">
 <h1>5. 控制线耦合强度<a class="headerlink" href="#id1" title="永久链接至标题">¶</a></h1>
-<p><img alt="Alt text" src="3chip/x-control.png" /></p>
+<p><img alt="Alt text" src="../_images/x-control.png" /></p>
 <p>x-control 驱动强度为</p>
 <div class="math notranslate nohighlight">
 \[
@@ -48,7 +48,7 @@
 \[
 Z_q=\frac{1}{\omega_qC_q}
 \]</div>
-<p><span class="math notranslate nohighlight">\(C_q\)</span> 的计算参考 <span class="xref myst">Sec.1</span> 中的单位长度电容 <span class="math notranslate nohighlight">\((1.2)\)</span> ，长度按 <span class="math notranslate nohighlight">\(4l_q\)</span> 计算</p>
+<p><span class="math notranslate nohighlight">\(C_q\)</span> 的计算参考 <a class="reference internal" href="../2transline/01%E4%BC%A0%E8%BE%93%E7%BA%BF%E7%9A%84%E7%89%B9%E5%BE%81%E9%98%BB%E6%8A%97.html"><span class="doc std std-doc">Sec 2-1</span></a> 中的单位长度电容 <span class="math notranslate nohighlight">\((1.2)\)</span> ，长度按 <span class="math notranslate nohighlight">\(4l_q\)</span> 计算</p>
 <div class="math notranslate nohighlight">
 \[
 C_q=4l_qC_0=8l_q\epsilon_0 (\epsilon^{sub}_r+1) \frac{K(k)}{K(\sqrt{1-k^2})}
@@ -58,7 +58,7 @@ C_q=4l_qC_0=8l_q\epsilon_0 (\epsilon^{sub}_r+1) \frac{K(k)}{K(\sqrt{1-k^2})}
 <hr class="docutils" />
 <p>e.g. 计算驱动强度</p>
 <p>取输出电压 0.4V ，线上衰减 -60dB ，驱动电容 50fF。</p>
-<div class="highlight-py notranslate"><div class="highlight"><pre><span></span><span class="n">利用非谐性计算</span> <span class="n">bit</span> <span class="n">电容</span><span class="p">:</span> <span class="mf">83.98971434530235</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">利用非谐性计算</span> <span class="n">bit</span> <span class="n">电容</span><span class="p">:</span> <span class="mf">83.98971434530235</span>
 <span class="n">利用</span> <span class="n">bit</span> <span class="n">频率以及</span> <span class="n">cq</span> <span class="n">计算臂长</span><span class="p">:</span> <span class="mf">128.30108068130002</span>
 <span class="n">计算驱动强度</span><span class="p">:</span> <span class="mf">44.062910147476735</span>
 </pre></div>
