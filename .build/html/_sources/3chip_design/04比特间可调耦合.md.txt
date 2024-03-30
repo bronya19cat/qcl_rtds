@@ -1,6 +1,6 @@
 # 04比特间可调耦合
 
-![[couple-tunable.jpg|400]]
+![couple-tunable](image/couple-tunable.jpg)
 
 耦合强度
 

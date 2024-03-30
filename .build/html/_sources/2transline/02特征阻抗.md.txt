@@ -1,18 +1,18 @@
 # 02特征阻抗
 
-* 根据[[01.传输线理论]]可知，在理想情况下忽略电导和电阻后，均匀无耗传输线的特征阻抗 $Z_0=\sqrt{L_0/C_0}$ ，单位长度的电感和电容分别为
+* 根据[[01传输线理论]]可知，在理想情况下忽略电导和电阻后，均匀无耗传输线的特征阻抗 $Z_0=\sqrt{L_0/C_0}$ ，单位长度的电感和电容分别为
 
-	$$
-	L_0=(60 \pi)^2 \epsilon_0 \frac{K(\sqrt{1-k^2})}{K(k)}
-	\tag{1.1}
-	$$
+    $$
+    L_0=(60 \pi)^2 \epsilon_0 \frac{K(\sqrt{1-k^2})}{K(k)}
+    \tag{1.1}
+    $$
 
     $$
     C_0=2 \epsilon_0 (\epsilon^{sub}_r+1) \frac{K(k)}{K(\sqrt{1-k^2})}
     \tag{1.2}
     $$
 
-![Alt text](image/cpw.png)
+    ![cpw](image/cpw.png)
 
     （K 是第一类椭圆积分，$k=\frac{s}{s+2w}$，s 是中心导体的宽度，w 是导体距地面距离、沟宽。）
 
@@ -33,7 +33,7 @@ e.g. 计算Z0
 
 bridge 的宽度 W=2um，CPW 的 w 为 5um，s 为10um，绝缘层的材质为高阻硅厚度为 250nm，衬底为蓝宝石。
 
-![Alt text](image/table-z0.jpg)
+![z0](image/table-z0.jpg)
 
 ```python
 sapphire-z0: 

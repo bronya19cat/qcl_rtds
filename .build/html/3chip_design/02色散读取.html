@@ -45,7 +45,7 @@
         </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
               <p class="caption" role="heading"><span class="caption-text">QISKIT</span></p>
 <ul>
-<li class="toctree-l1"><a class="reference internal" href="../1qiskit/01qiskit.html">01qiskit</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../1qiskit/01qiskit_primary.html">01qiskit_primary</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../1qiskit/02little_endians.html">02little_endians</a></li>
 </ul>
 <p class="caption" role="heading"><span class="caption-text">TRANSLINE</span></p>
@@ -117,7 +117,7 @@
              
   <div class="tex2jax_ignore mathjax_ignore section" id="id1">
 <h1>02色散读取<a class="headerlink" href="#id1" title="永久链接至标题">¶</a></h1>
-<p>![[dispersive-shift.jpg|500]]
+<p><img alt="" src="../_images/dispersive-shift.jpg" />
 （两能级、三能级、六能级模型下，谐振腔频率/腔内光子数随测量强度的变化，红线对应的是比特处于 |0⟩，蓝色虚线对应 |1⟩，灰色虚线对应 |2⟩。）</p>
 <p>由于比特与读取腔耦合后，读取腔本身的频率发生变化，理论上很难测量到腔的本征频率。但是当读取腔内的光子数较多时，腔的频率逐渐接近本征频率。因此 <span class="math notranslate nohighlight">\(\omega_r\)</span> 可以采用高功率进行快速标定。</p>
 <p>在 <span class="math notranslate nohighlight">\(g/\Delta &lt;&lt; 1\)</span> 的色散区域（dispersive regime），谐振子的共振频率 <span class="math notranslate nohighlight">\(\omega_r\)</span> 受量子比特影响产生位移（shift） <span class="math notranslate nohighlight">\(\chi\)</span> ，其中 <span class="math notranslate nohighlight">\(\Delta=\omega_q-\omega_r\)</span> 是量子比特和谐振子的频率差。</p>
@@ -125,9 +125,9 @@
 <li><p>对于两能级系统，低功率下的读取腔的频率在比特不同态下有区分，而光子数几乎没有区别。</p>
 <div class="math notranslate nohighlight">
 \[
-	\chi=g^2/\Delta
-	\tag{9.1}
-	\]</div>
+    \chi=g^2/\Delta
+    \tag{9.1}
+    \]</div>
 <ul class="simple">
 <li><p>当 <span class="math notranslate nohighlight">\(q\rightarrow\ket{1}\)</span> , 谐振腔的共振频率发生偏移 <span class="math notranslate nohighlight">\(\omega_r+\chi\)</span></p></li>
 <li><p>当 <span class="math notranslate nohighlight">\(q\rightarrow\ket{0}\)</span> , 谐振腔的共振频率发生偏移 <span class="math notranslate nohighlight">\(\omega_r-\chi\)</span></p></li>
@@ -148,7 +148,7 @@
 <span class="n">高阶修正</span><span class="p">:</span> <span class="o">-</span><span class="mf">0.467479674796748</span> <span class="n">MHz</span>
 </pre></div>
 </div>
-<p>![[dispersive-region.png|450]]</p>
+<p><img alt="dispersive-region" src="../_images/dispersive-region.png" /></p>
 </div>
 
 

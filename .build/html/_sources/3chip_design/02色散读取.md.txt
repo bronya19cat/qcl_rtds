@@ -1,6 +1,6 @@
 # 02色散读取
 
-![[dispersive-shift.jpg|500]]
+![](image/dispersive-shift.jpg)
 （两能级、三能级、六能级模型下，谐振腔频率/腔内光子数随测量强度的变化，红线对应的是比特处于 |0⟩，蓝色虚线对应 |1⟩，灰色虚线对应 |2⟩。）
 
 由于比特与读取腔耦合后，读取腔本身的频率发生变化，理论上很难测量到腔的本征频率。但是当读取腔内的光子数较多时，腔的频率逐渐接近本征频率。因此 $\omega_r$ 可以采用高功率进行快速标定。
@@ -9,10 +9,10 @@
 
 1. 对于两能级系统，低功率下的读取腔的频率在比特不同态下有区分，而光子数几乎没有区别。
 
-	$$
-	\chi=g^2/\Delta
-	\tag{9.1}
-	$$
+    $$
+    \chi=g^2/\Delta
+    \tag{9.1}
+    $$
     
     * 当 $q\rightarrow\ket{1}$ , 谐振腔的共振频率发生偏移 $\omega_r+\chi$
     * 当 $q\rightarrow\ket{0}$ , 谐振腔的共振频率发生偏移 $\omega_r-\chi$
@@ -34,4 +34,4 @@ qubit 和 res 频率差 1GHz，耦合强度为 50MHz，非谐性 -230MHz。色�
 高阶修正: -0.467479674796748 MHz
 ```
 
-![[dispersive-region.png|450]]
+![dispersive-region](image/dispersive-region.png)

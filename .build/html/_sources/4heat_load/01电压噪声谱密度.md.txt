@@ -11,7 +11,7 @@ $$
 
 白噪声的频谱是均匀分布的，在所有频率上都有相同的能量密度。从量子的角度解释，温度引起了光子数涨落，进而和量子比特耦合，其密度为 $n(T,f)=\frac{1}{exp(hf/k_BT)-1}$ （单位： $Hz^{-1} s^{-1}$ )。
 
-![[image/density-photo.png|400]]
+![](image/density-photo.png)
 
 从上图可以看到，频率越高，热激发产生的光子数密度越低，但是同时光子频率越高，单光子能量也高，因此最终的噪声密度 $S_{V2}\approx 4k_BRT$ 仍是一个与 f 无关的定值（在 300K，GHz）。
 
@@ -32,7 +32,7 @@ A1：在 **REF.KONG.P57** 找到了答案 “对于 qubit readout 线路来说�
 
 ---
 
-![[image/衰减器配置.png]]
+![attenuator_configuration](image/attenuator_configuration.png)
 
 实际上，每层的热源都会产生热噪声。接下来考虑按上图的设计，XY 通道上每一层产生的热噪声经过后级逐级衰减之后，到达 base (MC) 层时的噪声谱密度。
 
@@ -54,7 +54,7 @@ A1：在 **REF.KONG.P57** 找到了答案 “对于 qubit readout 线路来说�
 （4）300mm 半柔线插损为1.44dB；
 （5）LPF 5850+插损为0.83dB；LPF 500+插损为0.94dB。
 
-![[image/噪声密度.png]]
+![noise_density](image/noise_density.png)
 
 可以看出
 - 只有在 20 mK 层，噪声谱对频率敏感，这时热光子能量 $hf$ 接近热力学标度 $k_BT$；

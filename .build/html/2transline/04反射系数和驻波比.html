@@ -45,7 +45,7 @@
         </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
               <p class="caption" role="heading"><span class="caption-text">QISKIT</span></p>
 <ul>
-<li class="toctree-l1"><a class="reference internal" href="../1qiskit/01qiskit.html">01qiskit</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../1qiskit/01qiskit_primary.html">01qiskit_primary</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../1qiskit/02little_endians.html">02little_endians</a></li>
 </ul>
 <p class="caption" role="heading"><span class="caption-text">TRANSLINE</span></p>
@@ -117,7 +117,7 @@
              
   <div class="tex2jax_ignore mathjax_ignore section" id="id1">
 <h1>04反射系数和驻波比<a class="headerlink" href="#id1" title="永久链接至标题">¶</a></h1>
-<p>由[[03.阻抗变换特性]]传输方程 <span class="math notranslate nohighlight">\((2.1)\)</span> ，得出反射系数：</p>
+<p>由[[03阻抗变换特性]]传输方程 <span class="math notranslate nohighlight">\((2.1)\)</span> ，得出反射系数：</p>
 <div class="math notranslate nohighlight">
 \[
 \Gamma_u(z)=\frac{u^-}{u^+}=\frac{A_2}{A_1}e^{-2j\gamma z}=-\Gamma_i(z)
@@ -140,8 +140,8 @@
 <p>因此，当阻抗匹配时，i.e. 负载阻抗=传输线特征阻抗，<span class="math notranslate nohighlight">\(|\Gamma|=0\)</span> ，也就是无反射。</p>
 <hr class="docutils" />
 <p>当存在反射波的情况下，由于它和入射波具有相同的频率，两者将形成一个稳定的叠加状态——驻波。</p>
-<p>![[standing-wave.png]]</p>
-<p>![[standing-wave.gif]]</p>
+<p><img alt="standing-wave" src="../_images/standing-wave.png" /></p>
+<p><img alt="standing-wave" src="../_images/standing-wave.gif" /></p>
 <p>上图是在不同时间下电压入射波和反射波的情况，可以看出叠加波形的波腹和波节位置是固定不变的，因此叫做驻波。而电压驻波比 VSWR 就是入射波与反射波振幅之和 / 振幅之差：</p>
 <div class="math notranslate nohighlight">
 \[

@@ -36,13 +36,14 @@ Quantum Computing Learning
    3chip_design/04比特间可调耦合.md
    3chip_design/05控制线耦合强度.md
 
-.. toctree::
-   :maxdepth: 2
-   :caption: HEAT-LOAD
+.. 按块注释   
+   .. toctree::
+      :maxdepth: 2
+      :caption: HEAT-LOAD
 
-   4heat_load/01电压噪声谱密度.md
-   4heat_load/02等效噪声温度.md
-   4heat_load/03线缆热负荷.md
+      4heat_load/01电压噪声谱密度.md
+      4heat_load/02等效噪声温度.md
+      4heat_load/03线缆热负荷.md
 
 .. toctree::
    :maxdepth: 2
@@ -62,10 +63,11 @@ Quantum Computing Learning
    6dilution_refrigerator/05JT阀_1K.md
    6dilution_refrigerator/06热交换器.md
    6dilution_refrigerator/07稀释制冷机_20mK.md
-   6dilution_refrigerator/08磁体.md
    6dilution_refrigerator/10核去磁.md
 
+.. 6dilution_refrigerator/08磁体.md
 
+ 
 Indices and Tables
 ==================
 * :ref:`genindex`

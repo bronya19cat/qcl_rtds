@@ -4,47 +4,22 @@
     "type": "split",
     "children": [
       {
-        "id": "195c6ee7c5657e66",
+        "id": "d39fb575abbb8f5a",
         "type": "tabs",
         "children": [
           {
-            "id": "66e9763c8b2f78d8",
-            "type": "leaf",
-            "state": {
-              "type": "empty",
-              "state": {}
-            }
-          },
-          {
-            "id": "8ba986771d1a1060",
-            "type": "leaf",
-            "state": {
-              "type": "empty",
-              "state": {}
-            }
-          },
-          {
-            "id": "a0fcd85342597a72",
-            "type": "leaf",
-            "state": {
-              "type": "empty",
-              "state": {}
-            }
-          },
-          {
-            "id": "9d5f2fce25f0927a",
+            "id": "2609ec7b6f624a3c",
             "type": "leaf",
             "state": {
               "type": "markdown",
               "state": {
-                "file": "2transline/03阻抗变换特性.md",
-                "mode": "source",
-                "source": true
+                "file": "6dilution_refrigerator/08磁体.md",
+                "mode": "preview",
+                "source": false
               }
             }
           }
-        ],
-        "currentTab": 3
+        ]
       }
     ],
     "direction": "vertical"
@@ -73,7 +48,7 @@
             "state": {
               "type": "search",
               "state": {
-                "query": "png",
+                "query": "",
                 "matchingCase": false,
                 "explainSearch": false,
                 "collapseAll": false,
@@ -110,7 +85,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "2transline/03阻抗变换特性.md",
+                "file": "6dilution_refrigerator/08磁体.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -127,7 +102,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "2transline/03阻抗变换特性.md",
+                "file": "6dilution_refrigerator/08磁体.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -150,7 +125,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "2transline/03阻抗变换特性.md"
+                "file": "6dilution_refrigerator/08磁体.md"
               }
             }
           }
@@ -171,44 +146,45 @@
       "command-palette:打开命令面板": false
     }
   },
-  "active": "9d5f2fce25f0927a",
+  "active": "2609ec7b6f624a3c",
   "lastOpenFiles": [
-    "6dilution_refrigerator/6T-1.5T-1.5T.png",
-    "6dilution_refrigerator/6T-1T-1T.png",
-    "2transline/02特征阻抗.md",
-    "2transline/01传输线理论.md",
-    "1qiskit/02little_endians.md",
-    "1qiskit/01qiskit_primary.md",
+    "6dilution_refrigerator/10核去磁.md",
     "6dilution_refrigerator/08磁体.md",
-    "6dilution_refrigerator/6T-2T-2T.png",
     "6dilution_refrigerator/07稀释制冷机_20mK.md",
     "6dilution_refrigerator/06热交换器.md",
     "6dilution_refrigerator/05JT阀_1K.md",
-    "2transline/05全反射阻抗变换.md",
     "6dilution_refrigerator/04蒸发冷却_1K.md",
-    "2transline/04反射系数和驻波比.md",
     "6dilution_refrigerator/03GM和脉冲管制冷机_4K.md",
-    "2transline/03阻抗变换特性.md",
-    "4heat_load/03线缆热负荷.md",
-    "3chip_design/03比特与腔耦合.md",
-    "3chip_design/02色散读取.md",
     "6dilution_refrigerator/02卡诺冷机.md",
+    "6dilution_refrigerator/01低温冷却原理.md",
+    "5qubit/01scq_advantage.md",
+    "5qubit/02scq_type.md",
+    "4heat_load/03线缆热负荷.md",
     "4heat_load/02等效噪声温度.md",
-    "3chip_design/01比特频率.md",
     "4heat_load/01电压噪声谱密度.md",
-    "3chip_design/05控制线耦合强度.md",
-    "3chip_design/04比特间可调耦合.md",
+    "4heat_load/image/thermal_load.png",
+    "4heat_load/image/equivalent_noise_0.058.png",
+    "4heat_load/image/equivalent_noise_0.045.png",
+    "4heat_load/image/attenuator_configuration.png",
+    "4heat_load/image/noise_density.png",
+    "4heat_load/image/热负荷.png",
+    "4heat_load/image/等效噪声0.058.png",
+    "4heat_load/image/等效噪声0.045.png",
+    "6dilution_refrigerator/image/helical_coil.png",
+    "6dilution_refrigerator/image/magnet.png",
+    "2transline/03阻抗变换特性.md",
+    "2transline/04反射系数和驻波比.md",
+    "2transline/02特征阻抗.md",
+    "3chip_design/02色散读取.md",
     "2transline/07品质因子.md",
-    "1qiskit/image/test-cxgate.png",
-    "2transline/08purcell_effect.md",
     "2transline/06负载短路和开路.md",
-    "6dilution_refrigerator/image/银粉.png",
-    "6dilution_refrigerator/image/螺管1.png",
-    "6dilution_refrigerator/image/螺管.png",
-    "6dilution_refrigerator/image/蒸汽压.png",
-    "6dilution_refrigerator/image/蒸汽压1.png",
-    "6dilution_refrigerator/image/蒸发.png",
-    "6dilution_refrigerator/image/磁体.png",
+    "3chip_design/04比特间可调耦合.md",
+    "2transline/05全反射阻抗变换.md",
+    "2transline/01传输线理论.md",
+    "相对或绝对路径/6T-1T-1T.png.md",
+    "相对或绝对路径",
+    "1qiskit/02little_endians.md",
+    "1qiskit/01qiskit_primary.md",
     "6dilution_refrigerator/image",
     "6dilution_refrigerator",
     "5qubit",
@@ -218,7 +194,6 @@
     "2heat_load/image",
     "2heat_load",
     "3chip_design/image",
-    "3chip_design",
     "未命名 1.canvas",
     "未命名.canvas",
     "未命名 4.canvas",

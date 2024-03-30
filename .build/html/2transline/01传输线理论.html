@@ -45,7 +45,7 @@
         </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
               <p class="caption" role="heading"><span class="caption-text">QISKIT</span></p>
 <ul>
-<li class="toctree-l1"><a class="reference internal" href="../1qiskit/01qiskit.html">01qiskit</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../1qiskit/01qiskit_primary.html">01qiskit_primary</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../1qiskit/02little_endians.html">02little_endians</a></li>
 </ul>
 <p class="caption" role="heading"><span class="caption-text">TRANSLINE</span></p>
@@ -130,13 +130,13 @@
 <h2>1. 传输线的类型<a class="headerlink" href="#id2" title="永久链接至标题">¶</a></h2>
 <div class="section" id="tem">
 <h3>1.1 双导体传输线，传输TEM波<a class="headerlink" href="#tem" title="永久链接至标题">¶</a></h3>
-<p>![[双导线传输线.png]]
-上图分别是平行双线、同轴线、带状线、微带线。</p>
+<p><img alt="dual_conductor_transmission_line" src="../_images/dual_conductor_transmission_line.png" /></p>
+<p>上图分别是平行双线、同轴线、带状线、微带线。</p>
 </div>
 <div class="section" id="tmte">
 <h3>1.2 波导 - 填充介质的金属波导管，传输TM、TE<a class="headerlink" href="#tmte" title="永久链接至标题">¶</a></h3>
-<p>![[波导.png]]
-特点是功率容量大、损耗低。有矩形、圆、脊型、椭圆波导等。</p>
+<p><img alt="waveguide" src="../_images/waveguide.png" /></p>
+<p>特点是功率容量大、损耗低。有矩形、圆、脊型、椭圆波导等。</p>
 </div>
 <div class="section" id="id3">
 <h3>1.3 介质传输线，电磁波沿传输线表面传播<a class="headerlink" href="#id3" title="永久链接至标题">¶</a></h3>
@@ -145,14 +145,14 @@
 <div class="section" id="id4">
 <h2>2. 传输线方程<a class="headerlink" href="#id4" title="永久链接至标题">¶</a></h2>
 <p>短线理论：<span class="math notranslate nohighlight">\(l&lt;\lambda\)</span> ，低频电路，看不到线内波形，是集总参数电路；
-长线理论：<span class="math notranslate nohighlight">\(l \geq \lambda\)</span> ，高频电路，是分布参数电路，对应的电容、电感、电阻、电导用单位长度值表示。
-![[传输线方程.png]]
-<em>上图中电阻分压、电导分流。在理想情况下，<span class="math notranslate nohighlight">\(R=G=0\)</span> ，传输线就是个 LC 谐振子。</em></p>
-<p>![[基尔霍夫定律.png]]
-![[均匀传输线方程.png]]
-![[时谐传输线方程.png]]</p>
-<p>![[传播常数gamma.png]]
-![[特征阻抗z0.png]]</p>
+长线理论：<span class="math notranslate nohighlight">\(l \geq \lambda\)</span> ，高频电路，是分布参数电路，对应的电容、电感、电阻、电导用单位长度值表示。</p>
+<p><img alt="transmission_line_equation" src="../_images/transmission_line_equation.png" /></p>
+<p><em>上图中电阻分压、电导分流。在理想情况下，<span class="math notranslate nohighlight">\(R=G=0\)</span> ，传输线就是个 LC 谐振子。</em></p>
+<p><img alt="kirchhoffs_law" src="../_images/kirchhoffs_law.png" /></p>
+<p><img alt="uniform_transmission_line_equation" src="../_images/uniform_transmission_line_equation.png" /></p>
+<p><img alt="harmonic_transmission_line_equation" src="../_images/harmonic_transmission_line_equation.png" /></p>
+<p><img alt="propagation_constant_gamma" src="../_images/propagation_constant_gamma.png" /></p>
+<p><img alt="characteristic_impedance_z0" src="../_images/characteristic_impedance_z0.png" /></p>
 </div>
 </div>
 

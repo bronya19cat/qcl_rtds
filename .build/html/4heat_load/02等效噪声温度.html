@@ -45,7 +45,7 @@
         </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
               <p class="caption" role="heading"><span class="caption-text">QISKIT</span></p>
 <ul>
-<li class="toctree-l1"><a class="reference internal" href="../1qiskit/01qiskit.html">01qiskit</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../1qiskit/01qiskit_primary.html">01qiskit_primary</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../1qiskit/02little_endians.html">02little_endians</a></li>
 </ul>
 <p class="caption" role="heading"><span class="caption-text">TRANSLINE</span></p>
@@ -118,7 +118,7 @@
   <div class="tex2jax_ignore mathjax_ignore section" id="id1">
 <h1>02等效噪声温度<a class="headerlink" href="#id1" title="永久链接至标题">¶</a></h1>
 <p>下面计算 MC 层的等价温度：即，将芯片接收的总噪声（ST层的噪声约为总噪声的一半，这里计算总噪声而非ST），等价于全部来自于从 MC 层，计算出此噪声强度下 MC 的温度。</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span>sv2_total： 1.103113173769864e-23 
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>sv2_total： 1.103113173769864e-23 
 等效 MC 噪声温度： 0.7876608417849421 
 等效 芯片 噪声温度： 0.058356957091375165 
 光子数密度： 0.01664807568887365
@@ -126,15 +126,15 @@
 </div>
 <p>也就是说，XY 通道上的噪声的光子数密度从 1249 （300K 产生的）经过 50dB 衰减之后，降低到了 0.016 （各温度层的总和）量级。</p>
 <p>总的噪声谱密度等效于 MC 层处于 787mK 传导下来的噪声，或等效于将芯片直接置于 58mK 的环境下。
-![[等效噪声0.058.png]]
+<img alt="equivalent_noise_0.058" src="../_images/equivalent_noise_0.058.png" />
 橙色线就是转换后，芯片的噪声谱密度曲线，由于温度提高，对频率的敏感性减弱。</p>
 <p>由于信道经过的每一层都将引入新的热噪声，并且新的噪声强度相对减弱，为了降低新噪声的影响，应该将衰减的行为置后。<strong>考虑把所有的衰减器都放在 MC 层</strong></p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span>sv2_total1： 3.229075931689739e-24
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>sv2_total1： 3.229075931689739e-24
 等效 芯片 噪声温度： 0.04503077872097213 
 光子数密度： 0.004873289685424986
 </pre></div>
 </div>
-<p>![[等效噪声0.045.png]]</p>
+<p><img alt="equivalent_noise_0.045" src="../_images/equivalent_noise_0.045.png" /></p>
 <p>可以看到，总的噪声谱密度下降到 1/3，芯片等效温度下降到 45mK ，光子数密度下降到 1/3，抑制效果最佳，但是需要考虑衰减器的热负荷与 MC 层的冷量。</p>
 <p>以上是由 XY 通道引入噪声的分析。R-IN 通道同样是高频信道，计算过程和 XY 类似。Z-control 通道上是低频信号，对 qubit 的主要影响是 dephasing。
 假设 Z 线的输入阻抗为 R，到 qubit 的 SQUID 环的互感为 M， Z 的电压噪声谱密度可以转化为磁通噪声谱密度、qubit频率波动</p>
@@ -148,7 +148,7 @@ S_\phi(\omega)=(M/R)^2S_{v2}(\omega)
 S_{\omega_q}=(\partial{\omega_q}/\partial{\phi})^2S_\phi(\omega)
 \tag{2.2}
 \]</div>
-<p>根据 <span class="xref myst">REF.KONG.P60</span> 的计算，从 Z-control 线路引入的白噪声可以完全忽略。</p>
+<p>根据 <strong>REF.KONG.P60</strong> 的计算，从 Z-control 线路引入的白噪声可以完全忽略。</p>
 </div>
 
 

@@ -43,7 +43,7 @@
         </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
               <p class="caption" role="heading"><span class="caption-text">QISKIT</span></p>
 <ul>
-<li class="toctree-l1"><a class="reference internal" href="../1qiskit/01qiskit.html">01qiskit</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../1qiskit/01qiskit_primary.html">01qiskit_primary</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../1qiskit/02little_endians.html">02little_endians</a></li>
 </ul>
 <p class="caption" role="heading"><span class="caption-text">TRANSLINE</span></p>
@@ -117,7 +117,7 @@
 <h1>03线缆热负荷<a class="headerlink" href="#id1" title="永久链接至标题">¶</a></h1>
 <p>无论是线缆的损耗，还是衰减器或者滤波器，最终都是将射频能量转化成热能散失，因此对于每层的热载功率，可以通过设置信号初始输入功率逐层计算。</p>
 <p>使用的 XY 信号源输出功率范围 -40~-10dBm，即最大功率不超过 100uW。</p>
-<p>![[热负荷.png]]</p>
+<p><img alt="thermal_load" src="../_images/thermal_load.png" /></p>
 <p>通过上图中各层的衰减器布置，XY 通道各层的功耗是可计算的：</p>
 <table class="colwidths-auto docutils align-default">
 <thead>
@@ -158,13 +158,9 @@
 <td><p>-70</p></td>
 <td><p>0.01676553</p></td>
 </tr>
-<tr class="row-even"><td><p>经过20dB的衰减，输入到QPU的功率已经极低，基本忽略。每层发热的主要通道为：</p></td>
-<td><p></p></td>
-<td><p></p></td>
-<td><p></p></td>
-</tr>
 </tbody>
 </table>
+<p>经过20dB的衰减，输入到QPU的功率已经极低，基本忽略。每层发热的主要通道为：</p>
 <table class="colwidths-auto docutils align-default">
 <thead>
 <tr class="row-odd"><th class="head"><p>Layer</p></th>
@@ -213,21 +209,22 @@
 </tr>
 </tbody>
 </table>
-<p><strong>1. 因此，4K层尤其是20mK层的冷量将严重限制比特规模。</strong></p>
-<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>按照72比特6.3μW发热估计，BF-1000XLD 30μW@20mK~4.7倍，国产目前（2023.12）不超过13μW @ 20mK，大约是2倍。
-</pre></div>
-</div>
-<p><strong>2. 另外还需要考虑制冷机接口数量的限制。</strong></p>
-<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>Z/C采用室温合成或者DAC方案，72比特的主要通道数为Z/C+XY=198+72=270，按照目前普遍支持的168*2高频模组作为标准，结论是：差不多！
-</pre></div>
-</div>
+<ul>
+<li><p>因此，4K层尤其是20mK层的冷量将严重限制比特规模。</p>
+<p>按照72比特6.3μW发热估计，BF-1000XLD 30μW&#64;20mK~4.7倍，国产目前（2023.12）不超过13μW &#64; 20mK，大约是2倍。</p>
+</li>
+<li><p>另外需要考虑制冷机接口数量的限制。</p>
+<p>Z/C采用室温合成或者DAC方案，72比特的主要通道数为Z/C+XY=198+72=270，按照目前普遍支持的168*2高频模组作为标准，结论是：差不多！</p>
+</li>
+</ul>
 <hr class="docutils" />
-<p>下表是<span class="xref myst">REF.某计算环境支撑系统.doc</span>中各层的热功耗。为保证各层热功耗不超过环境支撑系统制冷量，各层热功耗应按照最大值估算，计算时遵循了以下原则：
+<p>下表是 <strong>REF.某计算环境支撑系统</strong> 中各层的热功耗。为保证各层热功耗不超过环境支撑系统制冷量，各层热功耗应按照最大值估算，计算时遵循了以下原则：
 （1）无视占空比，默认所有通道100%占空比；
 （2）RT-PT2空间内所有热量导入PT1冷板；
 （3）除RT-PT1层外，其余层热量均传入上层冷板；
-（4）计算时，要先把dBm换算成uW，再进行计算，不可用dBm相加或相减。
-RT-PT1层热功耗</p>
+（4）计算时，要先把dBm换算成uW，再进行计算，不可用dBm相加或相减。</p>
+<ol class="arabic">
+<li><p>RT-PT1层热功耗</p>
 <table class="colwidths-auto docutils align-default">
 <thead>
 <tr class="row-odd"><th class="head"><p>通道/器件</p></th>
@@ -296,17 +293,11 @@ RT-PT1层热功耗</p>
 <td><p>12</p></td>
 <td><p>833.004</p></td>
 </tr>
-<tr class="row-odd"><td><p>发热功率合计：2408.63277466uw</p></td>
-<td><p></p></td>
-<td><p></p></td>
-<td><p></p></td>
-<td><p></p></td>
-<td><p></p></td>
-<td><p></p></td>
-</tr>
 </tbody>
 </table>
-<p>PT1-PT2层热功耗</p>
+<p>发热功率合计：2408.63277466uw</p>
+</li>
+<li><p>PT1-PT2层热功耗</p>
 <table class="colwidths-auto docutils align-default">
 <thead>
 <tr class="row-odd"><th class="head"><p>通道/器件</p></th>
@@ -375,17 +366,11 @@ RT-PT1层热功耗</p>
 <td><p>12</p></td>
 <td><p>1323.5508</p></td>
 </tr>
-<tr class="row-odd"><td><p>发热功率合计：2442.771961672uw</p></td>
-<td><p></p></td>
-<td><p></p></td>
-<td><p></p></td>
-<td><p></p></td>
-<td><p></p></td>
-<td><p></p></td>
-</tr>
 </tbody>
 </table>
-<p>PT2-Still层热功耗</p>
+<p>发热功率合计：2442.771961672uw</p>
+</li>
+<li><p>PT2-Still层热功耗</p>
 <table class="colwidths-auto docutils align-default">
 <thead>
 <tr class="row-odd"><th class="head"><p>通道/器件</p></th>
@@ -462,17 +447,11 @@ RT-PT1层热功耗</p>
 <td><p>12</p></td>
 <td><p>1147.6944</p></td>
 </tr>
-<tr class="row-even"><td><p>发热功率合计：127803.607987388uw</p></td>
-<td><p></p></td>
-<td><p></p></td>
-<td><p></p></td>
-<td><p></p></td>
-<td><p></p></td>
-<td><p></p></td>
-</tr>
 </tbody>
 </table>
-<p>Still-CP层热功耗</p>
+<p>发热功率合计：127803.607987388uw</p>
+</li>
+<li><p>Still-CP层热功耗</p>
 <table class="colwidths-auto docutils align-default">
 <thead>
 <tr class="row-odd"><th class="head"><p>通道/器件</p></th>
@@ -533,17 +512,11 @@ RT-PT1层热功耗</p>
 <td><p>12</p></td>
 <td><p>1.07568</p></td>
 </tr>
-<tr class="row-even"><td><p>发热功率合计：51.41412336 uw</p></td>
-<td><p></p></td>
-<td><p></p></td>
-<td><p></p></td>
-<td><p></p></td>
-<td><p></p></td>
-<td><p></p></td>
-</tr>
 </tbody>
 </table>
-<p>CP-MC层热功耗</p>
+<p>发热功率合计：51.41412336 uw</p>
+</li>
+<li><p>CP-MC层热功耗</p>
 <table class="colwidths-auto docutils align-default">
 <thead>
 <tr class="row-odd"><th class="head"><p>通道/器件</p></th>
@@ -604,17 +577,11 @@ RT-PT1层热功耗</p>
 <td><p>12</p></td>
 <td><p>0</p></td>
 </tr>
-<tr class="row-even"><td><p>发热功率合计：0.165507204uw</p></td>
-<td><p></p></td>
-<td><p></p></td>
-<td><p></p></td>
-<td><p></p></td>
-<td><p></p></td>
-<td><p></p></td>
-</tr>
 </tbody>
 </table>
-<p>MC层以下热功率</p>
+<p>发热功率合计：0.165507204uw</p>
+</li>
+<li><p>MC层以下热功率</p>
 <table class="colwidths-auto docutils align-default">
 <thead>
 <tr class="row-odd"><th class="head"><p>通道/器件</p></th>
@@ -691,16 +658,11 @@ RT-PT1层热功耗</p>
 <td><p>12</p></td>
 <td><p>0.108</p></td>
 </tr>
-<tr class="row-even"><td><p>发热功率合计：6.268134948uw</p></td>
-<td><p></p></td>
-<td><p></p></td>
-<td><p></p></td>
-<td><p></p></td>
-<td><p></p></td>
-<td><p></p></td>
-</tr>
 </tbody>
 </table>
+<p>发热功率合计：6.268134948uw</p>
+</li>
+</ol>
 </div>
 
 
