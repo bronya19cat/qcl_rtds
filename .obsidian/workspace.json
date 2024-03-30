@@ -37,8 +37,8 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "6dilution_refrigerator/08磁体.md",
-                "mode": "preview",
+                "file": "2transline/03阻抗变换特性.md",
+                "mode": "source",
                 "source": true
               }
             }
@@ -90,8 +90,7 @@
               "state": {}
             }
           }
-        ],
-        "currentTab": 1
+        ]
       }
     ],
     "direction": "horizontal",
@@ -111,7 +110,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "6dilution_refrigerator/08磁体.md",
+                "file": "2transline/03阻抗变换特性.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -128,7 +127,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "6dilution_refrigerator/08磁体.md",
+                "file": "2transline/03阻抗变换特性.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -151,7 +150,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "6dilution_refrigerator/08磁体.md"
+                "file": "2transline/03阻抗变换特性.md"
               }
             }
           }
@@ -172,8 +171,16 @@
       "command-palette:打开命令面板": false
     }
   },
-  "active": "aad9bcdc37367da6",
+  "active": "9d5f2fce25f0927a",
   "lastOpenFiles": [
+    "6dilution_refrigerator/6T-1.5T-1.5T.png",
+    "6dilution_refrigerator/6T-1T-1T.png",
+    "2transline/02特征阻抗.md",
+    "2transline/01传输线理论.md",
+    "1qiskit/02little_endians.md",
+    "1qiskit/01qiskit_primary.md",
+    "6dilution_refrigerator/08磁体.md",
+    "6dilution_refrigerator/6T-2T-2T.png",
     "6dilution_refrigerator/07稀释制冷机_20mK.md",
     "6dilution_refrigerator/06热交换器.md",
     "6dilution_refrigerator/05JT阀_1K.md",
@@ -184,23 +191,17 @@
     "2transline/03阻抗变换特性.md",
     "4heat_load/03线缆热负荷.md",
     "3chip_design/03比特与腔耦合.md",
-    "1qiskit/02little_endians.md",
-    "2transline/02特征阻抗.md",
     "3chip_design/02色散读取.md",
     "6dilution_refrigerator/02卡诺冷机.md",
     "4heat_load/02等效噪声温度.md",
-    "2transline/01传输线理论.md",
     "3chip_design/01比特频率.md",
-    "6dilution_refrigerator/08磁体.md",
     "4heat_load/01电压噪声谱密度.md",
     "3chip_design/05控制线耦合强度.md",
     "3chip_design/04比特间可调耦合.md",
     "2transline/07品质因子.md",
     "1qiskit/image/test-cxgate.png",
-    "1qiskit/01qiskit_primary.md",
     "2transline/08purcell_effect.md",
     "2transline/06负载短路和开路.md",
-    "5qubit/01scq_advantage.md",
     "6dilution_refrigerator/image/银粉.png",
     "6dilution_refrigerator/image/螺管1.png",
     "6dilution_refrigerator/image/螺管.png",
@@ -208,8 +209,6 @@
     "6dilution_refrigerator/image/蒸汽压1.png",
     "6dilution_refrigerator/image/蒸发.png",
     "6dilution_refrigerator/image/磁体.png",
-    "6dilution_refrigerator/image/温度-压力图.png",
-    "6dilution_refrigerator/image/安装位置.png",
     "6dilution_refrigerator/image",
     "6dilution_refrigerator",
     "5qubit",
