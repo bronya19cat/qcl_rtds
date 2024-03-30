@@ -8,14 +8,14 @@
   "collapse-color-groups": false,
   "colorGroups": [
     {
-      "query": "path:mac  ",
+      "query": "path:Measurement-Control path:Measurement-Control  ",
       "color": {
         "a": 1,
-        "rgb": 15488341
+        "rgb": 15015711
       }
     },
     {
-      "query": "path:chip  ",
+      "query": "path:Dilution-Refrigerator  ",
       "color": {
         "a": 1,
         "rgb": 8635628
@@ -25,14 +25,14 @@
       "query": "path:qiskit  ",
       "color": {
         "a": 1,
-        "rgb": 12770701
+        "rgb": 9342429
       }
     },
     {
-      "query": "path:qubit  ",
+      "query": "path:Quantum-Chip  ",
       "color": {
         "a": 1,
-        "rgb": 16028820
+        "rgb": 16641435
       }
     }
   ],
@@ -41,11 +41,11 @@
   "textFadeMultiplier": 0,
   "nodeSizeMultiplier": 1,
   "lineSizeMultiplier": 1,
-  "collapse-forces": true,
+  "collapse-forces": false,
   "centerStrength": 0.518713248970312,
   "repelStrength": 10,
   "linkStrength": 1,
   "linkDistance": 250,
-  "scale": 0.813771308549873,
+  "scale": 0.8930106135468456,
   "close": true
 }

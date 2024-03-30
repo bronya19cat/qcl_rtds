@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="zh-CN" >
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>01电压噪声谱密度 &mdash; Quantum Computing Learning  文档</title>
+      <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+      <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
+  <!--[if lt IE 9]>
+    <script src="../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+        <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
+        <script src="../_static/jquery.js"></script>
+        <script src="../_static/underscore.js"></script>
+        <script src="../_static/doctools.js"></script>
+        <script src="../_static/translations.js"></script>
+        <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
+        <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <script src="../_static/js/theme.js"></script>
+    <link rel="index" title="索引" href="../genindex.html" />
+    <link rel="search" title="搜索" href="../search.html" />
+    <link rel="next" title="02等效噪声温度" href="02%E7%AD%89%E6%95%88%E5%99%AA%E5%A3%B0%E6%B8%A9%E5%BA%A6.html" />
+    <link rel="prev" title="05控制线耦合强度" href="../3chip_design/05%E6%8E%A7%E5%88%B6%E7%BA%BF%E8%80%A6%E5%90%88%E5%BC%BA%E5%BA%A6.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+
+          
+          
+          <a href="../index.html" class="icon icon-home">
+            Quantum Computing Learning
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <p class="caption" role="heading"><span class="caption-text">QISKIT</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../1qiskit/01qiskit_primary.html">01qiskit_primary</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../1qiskit/02little_endians.html">02little_endians</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">TRANSLINE</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../2transline/01%E4%BC%A0%E8%BE%93%E7%BA%BF%E7%90%86%E8%AE%BA.html">01传输线理论</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../2transline/02%E7%89%B9%E5%BE%81%E9%98%BB%E6%8A%97.html">02特征阻抗</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../2transline/03%E9%98%BB%E6%8A%97%E5%8F%98%E6%8D%A2%E7%89%B9%E6%80%A7.html">03阻抗变换特性</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../2transline/04%E5%8F%8D%E5%B0%84%E7%B3%BB%E6%95%B0%E5%92%8C%E9%A9%BB%E6%B3%A2%E6%AF%94.html">04反射系数和驻波比</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../2transline/05%E5%85%A8%E5%8F%8D%E5%B0%84%E9%98%BB%E6%8A%97%E5%8F%98%E6%8D%A2.html">05全反射阻抗变换</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../2transline/06%E8%B4%9F%E8%BD%BD%E7%9F%AD%E8%B7%AF%E5%92%8C%E5%BC%80%E8%B7%AF.html">06负载短路和开路</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../2transline/07%E5%93%81%E8%B4%A8%E5%9B%A0%E5%AD%90.html">07品质因子</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../2transline/08purcell_effect.html">08purcell_effect</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">CHIP-DESIGN</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../3chip_design/01%E6%AF%94%E7%89%B9%E9%A2%91%E7%8E%87.html">01比特频率</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../3chip_design/02%E8%89%B2%E6%95%A3%E8%AF%BB%E5%8F%96.html">02色散读取</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../3chip_design/03%E6%AF%94%E7%89%B9%E4%B8%8E%E8%85%94%E8%80%A6%E5%90%88.html">03比特与腔耦合</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../3chip_design/04%E6%AF%94%E7%89%B9%E9%97%B4%E5%8F%AF%E8%B0%83%E8%80%A6%E5%90%88.html">04比特间可调耦合</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../3chip_design/05%E6%8E%A7%E5%88%B6%E7%BA%BF%E8%80%A6%E5%90%88%E5%BC%BA%E5%BA%A6.html">05控制线耦合强度</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">HEAT-LOAD</span></p>
+<ul class="current">
+<li class="toctree-l1 current"><a class="current reference internal" href="#">01电压噪声谱密度</a></li>
+<li class="toctree-l1"><a class="reference internal" href="02%E7%AD%89%E6%95%88%E5%99%AA%E5%A3%B0%E6%B8%A9%E5%BA%A6.html">02等效噪声温度</a></li>
+<li class="toctree-l1"><a class="reference internal" href="03%E7%BA%BF%E7%BC%86%E7%83%AD%E8%B4%9F%E8%8D%B7.html">03线缆热负荷</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">QUBIT</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../5qubit/01scq_advantage.html">01scq_advantage</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../5qubit/02scq_type.html">02scq_type</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">DILUTION-REFRIGERATOR</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../6dilution_refrigerator/01%E4%BD%8E%E6%B8%A9%E5%86%B7%E5%8D%B4%E5%8E%9F%E7%90%86.html">01低温冷却原理</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../6dilution_refrigerator/02%E5%8D%A1%E8%AF%BA%E5%86%B7%E6%9C%BA.html">02卡诺冷机</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../6dilution_refrigerator/03GM%E5%92%8C%E8%84%89%E5%86%B2%E7%AE%A1%E5%88%B6%E5%86%B7%E6%9C%BA_4K.html">03GM和脉冲管制冷机_4K</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../6dilution_refrigerator/04%E8%92%B8%E5%8F%91%E5%86%B7%E5%8D%B4_1K.html">04蒸发冷却_1K</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../6dilution_refrigerator/05JT%E9%98%80_1K.html">05JT阀_1K</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../6dilution_refrigerator/06%E7%83%AD%E4%BA%A4%E6%8D%A2%E5%99%A8.html">06热交换器</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../6dilution_refrigerator/07%E7%A8%80%E9%87%8A%E5%88%B6%E5%86%B7%E6%9C%BA_20mK.html">07稀释制冷机_20mK</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../6dilution_refrigerator/08%E7%A3%81%E4%BD%93.html">08磁体</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../6dilution_refrigerator/10%E6%A0%B8%E5%8E%BB%E7%A3%81.html">10核去磁</a></li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../index.html">Quantum Computing Learning</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="../index.html" class="icon icon-home" aria-label="Home"></a></li>
+      <li class="breadcrumb-item active">01电压噪声谱密度</li>
+      <li class="wy-breadcrumbs-aside">
+            <a href="../_sources/4heat_load/01电压噪声谱密度.md.txt" rel="nofollow"> View page source</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <div class="tex2jax_ignore mathjax_ignore section" id="id1">
+<h1>01电压噪声谱密度<a class="headerlink" href="#id1" title="永久链接至标题">¶</a></h1>
+<p>温度会导致导体内部的自由电子不断进行热运动，对于阻值为 R 的电阻，Johnson-Nyquist 噪声的电压谱密度（单位： <span class="math notranslate nohighlight">\(V^2/Hz\)</span> ，等于功率谱密度 * R）为：</p>
+<div class="math notranslate nohighlight">
+\[
+S_{V2}(f,R,T) = 4k_BRT \frac{hf}{k_BT} \frac{1}{exp(hf/k_BT)-1}
+\tag{1.1}
+\]</div>
+<p>在 300K 常温下、RF 频段（GHz）。<span class="math notranslate nohighlight">\(hf&lt;&lt;k_BT\)</span> （比值约在万分之一到千分之一），计算得到 <span class="math notranslate nohighlight">\(hf\frac{1}{exp(hf/k_BT)-1}\approx k_BT\)</span>，也就是说 <span class="math notranslate nohighlight">\(S_{V2}\approx 4k_BRT\)</span>，这就是白噪声。</p>
+<p>白噪声的频谱是均匀分布的，在所有频率上都有相同的能量密度。从量子的角度解释，温度引起了光子数涨落，进而和量子比特耦合，其密度为 <span class="math notranslate nohighlight">\(n(T,f)=\frac{1}{exp(hf/k_BT)-1}\)</span> （单位： <span class="math notranslate nohighlight">\(Hz^{-1} s^{-1}\)</span> )。</p>
+<p>![[image/density-photo.png|400]]</p>
+<p>从上图可以看到，频率越高，热激发产生的光子数密度越低，但是同时光子频率越高，单光子能量也高，因此最终的噪声密度 <span class="math notranslate nohighlight">\(S_{V2}\approx 4k_BRT\)</span> 仍是一个与 f 无关的定值（在 300K，GHz）。</p>
+<p><mark>Q1：既然热噪声分布在全频段，并且其强度仅和温度有关，和输入信号无关。那么这里为何仅针对 f 频率的热光子？是否热噪声仅仅对相应频率的信号影响较大？</mark></p>
+<p>A1：在 <strong>REF.KONG.P57</strong> 找到了答案 “对于 qubit readout 线路来说，实际有影响的是频率𝑓附近的噪声成分”，这对于其他线路应该也是一样的。</p>
+<ul class="simple">
+<li><p>XY 通道信号频率在 4-6 GHz</p></li>
+<li><p>READOUT-IN 频率 6-8 GHz</p></li>
+</ul>
+<p>两个通道的光子数密度为：1249 和 892
+频率范围内积分，总光子数分别是 2533 和 1797</p>
+<p>现在考虑降低光子数密度，各线缆通道需要多少衰减：</p>
+<ul class="simple">
+<li><p>XY 通道降低到 <span class="math notranslate nohighlight">\(10^{-2}\)</span> 以下，需要 51dB</p></li>
+<li><p>READOUT-IN 降低到 <span class="math notranslate nohighlight">\(10^{-3}\)</span> 以下，需要 60dB</p></li>
+</ul>
+<p><mark>Q2：上边计算得到READOUT-IN需要衰减为 60dB ，与 <strong>REF.KONG.P57</strong> 中的参考值 70dB 有出入。该问题暂存。</mark></p>
+<hr class="docutils" />
+<p>![[image/衰减器配置.png]]</p>
+<p>实际上，每层的热源都会产生热噪声。接下来考虑按上图的设计，XY 通道上每一层产生的热噪声经过后级逐级衰减之后，到达 base (MC) 层时的噪声谱密度。</p>
+<p>不同线缆单位长度的插损可以从 <strong>REF.某计算环境支撑系统.doc</strong> 中查到：</p>
+<p>（1）高密度半刚线插损约为15.6dB/m</p>
+<ul class="simple">
+<li><p>RT-PT1：15.6 dB/m×0.18m＝2.808dB</p></li>
+<li><p>PT1-PT2：15.6 dB/m×0.286m＝4.4616dB</p></li>
+<li><p>PT2-Still：15.6 dB/m×0.248m＝3.8688dB</p></li>
+<li><p>Still-CP：15.6 dB/m×0.166m＝2.5896dB</p></li>
+</ul>
+<p>（2）普通密度半刚线插损约为15dB/m</p>
+<ul class="simple">
+<li><p>RT-PT1：15 dB/m×0.25m＝3.75dB</p></li>
+<li><p>PT1-PT2：15dB/m×0.265m＝3.975dB</p></li>
+<li><p>PT2-Still：15dB/m×0.22m＝3.3dB</p></li>
+<li><p>Still-CP：15 dB/m×0.07m＝1.05dB</p></li>
+</ul>
+<p>（3）CP-MC 使用的是 NbTi 线，极低温下基本没有损耗；
+（4）300mm 半柔线插损为1.44dB；
+（5）LPF 5850+插损为0.83dB；LPF 500+插损为0.94dB。</p>
+<p>![[image/噪声密度.png]]</p>
+<p>可以看出</p>
+<ul class="simple">
+<li><p>只有在 20 mK 层，噪声谱对频率敏感，这时热光子能量 <span class="math notranslate nohighlight">\(hf\)</span> 接近热力学标度 <span class="math notranslate nohighlight">\(k_BT\)</span>；</p></li>
+<li><p>由于在 4-6 GHz 范围，20 mK 层与其他层存在数量级上的差异，求和后的谱密度曲线（black）仍以 ST-0.8K 层（green）为主。</p></li>
+</ul>
+</div>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="../3chip_design/05%E6%8E%A7%E5%88%B6%E7%BA%BF%E8%80%A6%E5%90%88%E5%BC%BA%E5%BA%A6.html" class="btn btn-neutral float-left" title="05控制线耦合强度" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="02%E7%AD%89%E6%95%88%E5%99%AA%E5%A3%B0%E6%B8%A9%E5%BA%A6.html" class="btn btn-neutral float-right" title="02等效噪声温度" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; 版权所有 2024, imybfu@outlook.com.</p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

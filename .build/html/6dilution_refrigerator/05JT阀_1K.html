@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="zh-CN" >
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>05JT阀_1K &mdash; Quantum Computing Learning  文档</title>
+      <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+      <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
+  <!--[if lt IE 9]>
+    <script src="../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+        <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
+        <script src="../_static/jquery.js"></script>
+        <script src="../_static/underscore.js"></script>
+        <script src="../_static/doctools.js"></script>
+        <script src="../_static/translations.js"></script>
+    <script src="../_static/js/theme.js"></script>
+    <link rel="index" title="索引" href="../genindex.html" />
+    <link rel="search" title="搜索" href="../search.html" />
+    <link rel="next" title="06热交换器" href="06%E7%83%AD%E4%BA%A4%E6%8D%A2%E5%99%A8.html" />
+    <link rel="prev" title="04蒸发冷却_1K" href="04%E8%92%B8%E5%8F%91%E5%86%B7%E5%8D%B4_1K.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+
+          
+          
+          <a href="../index.html" class="icon icon-home">
+            Quantum Computing Learning
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <p class="caption" role="heading"><span class="caption-text">QISKIT</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../1qiskit/02little_endians.html">2.1 CNOT门分解</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../1qiskit/02little_endians.html#what-happened-in-qiskit">2.2 What happened in qiskit</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../1qiskit/02little_endians.html#little-endians">2.3 什么是Little endians</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">TRANSLINE</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../2transline/01%E4%BC%A0%E8%BE%93%E7%BA%BF%E7%90%86%E8%AE%BA.html">1. 传输线的类型</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../2transline/01%E4%BC%A0%E8%BE%93%E7%BA%BF%E7%90%86%E8%AE%BA.html#id3">2. 传输线方程</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">DILUTION-REFRIGERATOR</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="01%E4%BD%8E%E6%B8%A9%E5%86%B7%E5%8D%B4%E5%8E%9F%E7%90%86.html">01低温冷却原理</a></li>
+<li class="toctree-l1"><a class="reference internal" href="02%E5%8D%A1%E8%AF%BA%E5%86%B7%E6%9C%BA.html">02卡诺冷机</a></li>
+<li class="toctree-l1"><a class="reference internal" href="03GM%E5%92%8C%E8%84%89%E5%86%B2%E7%AE%A1%E5%88%B6%E5%86%B7%E6%9C%BA_4K.html">03GM和脉冲管制冷机_4K</a></li>
+<li class="toctree-l1"><a class="reference internal" href="04%E8%92%B8%E5%8F%91%E5%86%B7%E5%8D%B4_1K.html">04蒸发冷却_1K</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">05JT阀_1K</a></li>
+<li class="toctree-l1"><a class="reference internal" href="06%E7%83%AD%E4%BA%A4%E6%8D%A2%E5%99%A8.html">06热交换器</a></li>
+<li class="toctree-l1"><a class="reference internal" href="07%E7%A8%80%E9%87%8A%E5%88%B6%E5%86%B7%E6%9C%BA_20mK.html">07稀释制冷机_20mK</a></li>
+<li class="toctree-l1"><a class="reference internal" href="08%E7%A3%81%E4%BD%93.html">08磁体</a></li>
+<li class="toctree-l1"><a class="reference internal" href="10%E6%A0%B8%E5%8E%BB%E7%A3%81.html">10核去磁</a></li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../index.html">Quantum Computing Learning</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="../index.html" class="icon icon-home" aria-label="Home"></a></li>
+      <li class="breadcrumb-item active">05JT阀_1K</li>
+      <li class="wy-breadcrumbs-aside">
+            <a href="../_sources/6dilution_refrigerator/05JT阀_1K.md.txt" rel="nofollow"> View page source</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <div class="tex2jax_ignore mathjax_ignore section" id="jt-1k">
+<h1>05JT阀_1K<a class="headerlink" href="#jt-1k" title="永久链接至标题">¶</a></h1>
+<p>J-T阀就是焦耳-汤姆逊节流膨胀阀，在DR中完成从4K到1K左右的工作。</p>
+<p>![[多孔塞.png|400]]
+上图是一个多孔塞的节流示意图。当气体在管路中遇到突然的体积变化，会因局部阻力产生压力显著下降的等焓节流，<strong>在该过程中，热量转化为功，用以克服分子间的作用力（范德华力）。</strong>（<em>理想气体的关系式由于忽略了任何分子间的作用力，因此无法反映焦耳-汤姆逊效应。</em>）这种在等焓节流前、后温度随压力骤降发生较大变化的现象为焦耳−汤姆逊（J−T）效应。</p>
+<p>不过，实际上这种膨胀过程不仅会降温，还可能会升温。我们先扔掉各种热力学公式推导，直接看下图——该过程的温度-压力图。</p>
+<p>![[温度-压力图.png|360]]
+上图中，节流过程始于点w，并沿一条等焓线向左移动，经过x、y到达z，经历了先升温后降温的过程。其中：</p>
+<ul class="simple">
+<li><p>温度由上升变为下降的点（极值）叫做转变温度，将所有转变点连起来的线称为转变线（Inversion line）。</p></li>
+<li><p>转变线与纵轴（温度轴）的上/下交点叫做最大/最小转变温度。</p></li>
+<li><p>转变线存在一个压力的极点，叫做最大转变压力。</p></li>
+</ul>
+<p>同时，从上图可以知道，该制冷过程存在温度（最大/最小转变温度）和压强（最大转变压力）的限制，是在实际应用中需要考虑的。
+下图是一个简单的J-T阀的应用，上升液体为下降液体提供了预冷。</p>
+<p>![[J-T阀.png|260]]</p>
+</div>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="04%E8%92%B8%E5%8F%91%E5%86%B7%E5%8D%B4_1K.html" class="btn btn-neutral float-left" title="04蒸发冷却_1K" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="06%E7%83%AD%E4%BA%A4%E6%8D%A2%E5%99%A8.html" class="btn btn-neutral float-right" title="06热交换器" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; 版权所有 2024, imybfu@outlook.com.</p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>
